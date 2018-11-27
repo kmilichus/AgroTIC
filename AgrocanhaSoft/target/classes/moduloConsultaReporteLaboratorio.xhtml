@@ -1,0 +1,95 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>Consulta InformeLaboratorio</title>
+	<meta name="content-type" content="text/html; charset=UTF-8" />
+</h:head>
+
+<h:body>
+	<ui:composition template="#{suelosMB.URLMenu}">
+		<ui:define name="body">
+			<f:view>
+				<h:form>
+
+					<p:panel header="Modulo Consulta reporte - Laboratorio"
+						id="moduloReporteLab">
+						<p:growl />
+
+						<h:panelGrid columns="2" border="0">
+
+							<p:outputLabel value="Terreno:" />
+							<p:selectOneMenu id="ListaTerrenos"
+								binding="#{suelosMB.menuTerrenos}">
+								<f:selectItem itemValue="-1"
+									itemLabel="--SELECCIONE UN TERRENO--" />
+								<f:selectItems value="#{suelosMB.itemsTerrenos}"></f:selectItems>
+								<p:ajax update="moduloReporteLab"
+									listener="#{suelosMB.cargarLotesDelTerreno}" />
+								<p:ajax update="moduloReporteLab"
+									listener="#{suelosMB.cargarEstrategiasDelTerreno}" />
+
+							</p:selectOneMenu>
+
+							<p:outputLabel value="Código Plan de muestreo:" />
+							<p:selectOneMenu id="ListaCodigosPlan"
+								binding="#{suelosMB.menuEstrategiasMuestreo}">
+								<f:selectItem itemValue="-1"
+									itemLabel="--SELECCIONE UN CODIGO--" />
+								<f:selectItems value="#{suelosMB.itemsEstrategiasMuestreo}"></f:selectItems>
+							</p:selectOneMenu>
+
+							<p:outputLabel value="Lote:" />
+							<p:selectOneMenu id="ListaLotes" binding="#{suelosMB.menuLotes}">
+								<f:selectItem itemValue="-1" itemLabel="--SELECCIONE UN LOTE--" />
+								<f:selectItems value="#{suelosMB.itemsLotes}"></f:selectItems>
+							</p:selectOneMenu>
+
+						</h:panelGrid>
+
+						<p:commandButton disabled="false" id="btnConsultarReporteLab"
+							value="Consultar Reporte laboratorio"
+							update="moduloReporteLab,pnlReporteLab"
+							action="#{suelosMB.generarReporteLaboratorioDelLote}"
+							binding="#{suelosMB.btnConsultarReporteLaboratorio}" />
+
+						<h:panelGrid columns="2" border="0">
+
+							<p:outputLabel value="Cantidad de Muestras Recolectadas" />
+							<p:inputText id="txtNumMuestras" disabled="true"
+								binding="#{suelosMB.txtCantidadMuestrasRecolectadas}" />
+						</h:panelGrid>
+					</p:panel>
+
+					<p:panel id="pnlReporteLab" header="Resultados laboratorio">
+
+						<p:growl />
+
+						<p:dataTable var="datoActual" paginator="true" rows="5"
+							value="#{suelosMB.medidasLaboratorio}"
+							paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+							rowsPerPageTemplate="10,15,20">
+
+							<p:column headerText="Nombre de valor">
+								<p:outputLabel value="#{datoActual.nombreDato}" />
+							</p:column>
+
+							<p:column headerText="Valor obtenido">
+								<p:outputLabel value="#{datoActual.valorMedido}" />
+							</p:column>
+
+							<p:column headerText="Metodología">
+								<p:outputLabel value="#{datoActual.metodologiaAplicada}" />
+							</p:column>
+
+						</p:dataTable>
+					</p:panel>
+				</h:form>
+			</f:view>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

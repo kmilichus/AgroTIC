@@ -1,0 +1,62 @@
+//created on: 1/06/2015
+package com.expertobotanico.drools
+
+
+
+//list any import classes here.
+import com.expertobotanico.drools.model.*
+
+
+//declare any global variables here
+dialect "mvel"
+
+rule "0"
+    when
+        $p : Planta(des==0)               
+    then
+		System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+        System.out.println("     |-(5) HOJAS SIMPLES, ALTERNAS, SIN ESTÍPULAS");
+
+end
+
+rule "1"
+    when
+        $p : Planta(des==1)               
+    then
+  		System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("    >|-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("        |-(11)ASERRADAS, OLOROSAS, FLORES EN CABECITA");
+        System.out.println("        |-(12)ESTÍPULAS OLOR FRÍJOL");
+        System.out.println("        |-(13)ESTÍPULAS, OTRO OLOR");
+        System.out.println("        |-(14)HOJAS (FRONDES) CON SOROS (PIOJITOS)");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+        System.out.println("     |-(5) HOJAS SIMPLES, ALTERNAS, SIN ESTÍPULAS");
+end
+
+rule "11"
+    when
+        $p : Planta(des==11)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("    >|-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("       >|-(11)ASERRADAS, OLOROSAS, FLORES EN CABECITA");
+        System.out.println("          >|=>Compositae \n");
+        System.out.println("        |-(12)ESTÍPULAS OLOR FRÍJOL");
+        System.out.println("        |-(13)ESTÍPULAS, OTRO OLOR");
+        System.out.println("        |-(14)HOJAS (FRONDES) CON SOROS (PIOJITOS)");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+        System.out.println("     |-(5) HOJAS SIMPLES, ALTERNAS, SIN ESTÍPULAS");
+end
+
+

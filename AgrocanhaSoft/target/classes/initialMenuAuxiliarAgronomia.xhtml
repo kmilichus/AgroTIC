@@ -1,0 +1,65 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+
+</h:head>
+
+<h:body>
+
+	<h:form>
+
+		<p:panel header="AgrocanhaSoft Rol: Auxiliar De Agronomía "
+			id="moduloMenuCliente">
+
+			<p:growl />
+
+			<p:menubar>
+
+				<p:menuitem value=" [ Registro De Diagnosticos ] "
+					url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/moduloRegistrarDiagnostico.xhtml" />
+
+				<p:menuitem
+					value=" [ Capturar Ubicación Geografica ] "
+					url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/geolocalizacion.html" />
+
+				<p:menuitem
+					value=" [ Registrar Puntos de Recolección ] "
+					url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/moduloPuntoRecolección.xhtml" />
+
+				<p:menuitem value=" [ Consulta de Diagnosticos ] "
+					url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/moduloConsultarDiagnostico.xhtml" />
+
+				<p:menuitem value=" [ Administración de Terrenos ] "
+					url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/moduloAdministracionTerrenos.xhtml" />
+
+				<p:menuitem value=" [ Administración de Lotes ] "
+					url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/moduloAdministracionLotes.xhtml" />
+
+				<p:menuitem value=" [ Administración de Estrategias de Muestreo ] "
+					url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/moduloPlanMuestreo.xhtml" />
+
+				<p:menuitem value=" [ Consulta de Estrategias de Muestreo ] "
+					url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/moduloConsultaPlanMuestreo.xhtml" />
+
+				<p:menuitem value=" [ Registrar Analisis de Suelos ] "
+					url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/moduloAnalisisLaboratorio.xhtml" />
+
+				<p:menuitem value=" [ Actualización de Información Personal ] "
+					url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/moduloActualizacionDatos.xhtml" />
+
+				<p:menuitem value=" [ Volver a Inicio de Sesión ] "
+					url="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/login.xhtml" />
+
+			</p:menubar>
+
+
+		</p:panel>
+
+	</h:form>
+
+</h:body>
+</html>

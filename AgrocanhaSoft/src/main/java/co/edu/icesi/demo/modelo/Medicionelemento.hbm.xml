@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 18/05/2017 01:24:35 PM by Hibernate Tools 5.1.4.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="co.edu.icesi.demo.modelo.Medicionelemento" optimistic-lock="version" polymorphism="implicit" schema="public" select-before-update="false" table="medicionelemento">
+        <id name="meleid" type="big_decimal">
+            <column name="meleid" precision="20" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="co.edu.icesi.demo.modelo.Caracterizacionlote" embed-xml="true" fetch="select" insert="true" name="caracterizacionlote" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="caracterizacionlote_carid" precision="20" scale="0"/>
+        </many-to-one>
+        <many-to-one class="co.edu.icesi.demo.modelo.Metodologia" embed-xml="true" fetch="select" insert="true" name="metodologia" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="metodologia_metoid" precision="20" scale="0"/>
+        </many-to-one>
+        <many-to-one class="co.edu.icesi.demo.modelo.Rangoelementos" embed-xml="true" fetch="select" insert="true" name="rangoelementos" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="rangoelementoid" not-null="true" precision="20" scale="0"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="ppm" optimistic-lock="true" type="double" unique="false">
+            <column name="ppm" not-null="true" precision="17" scale="17"/>
+        </property>
+        <property generated="never" lazy="false" name="porcentajesolubilidad" optimistic-lock="true" type="double" unique="false">
+            <column name="porcentajesolubilidad" not-null="true" precision="17" scale="17"/>
+        </property>
+    </class>
+</hibernate-mapping>

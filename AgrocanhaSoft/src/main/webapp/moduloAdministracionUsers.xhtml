@@ -1,0 +1,65 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>Administración Usuarios</title>
+	<meta name="content-type" content="text/html; charset=UTF-8" />
+</h:head>
+
+<h:body>
+
+	<ui:composition template="#{usuarioMB.URLMenu}">
+		<ui:define name="body">
+			<f:view>
+
+				<h:form>
+
+					<p:panel header="Modulo administración de usuarios"
+						id="moduloAdmUsers">
+
+						<p:growl />
+
+						<h:panelGrid columns="2" border="0">
+
+							<p:outputLabel value="Cédula:" />
+							<p:inputText id="txtCedulaUser" disabled="false"
+								placeholder="Cedula del Usuario"
+								binding="#{usuarioMB.txtCedulaUsu}" />
+
+							<p:outputLabel value="Nombre:" />
+							<p:inputText id="txtNombreUser" disabled="false"
+								placeholder="Nombre del Usuario"
+								binding="#{usuarioMB.txtNombreUsu}" />
+
+							<p:outputLabel value="Rol" />
+							<p:selectOneMenu id="menuRoles"
+								binding="#{usuarioMB.menuRolesUsu}">
+								<f:selectItem itemValue="-1" itemLabel="--SELECCIONE UN ROL--" />
+								<f:selectItems value="#{usuarioMB.itemRolesUsu}" />
+							</p:selectOneMenu>
+
+
+							<p:outputLabel value="Password" />
+							<p:password id="txtPwUser" disabled="false"
+								placeholder="Password del usuario"
+								binding="#{usuarioMB.txtPasswordUsu}" />
+
+							<p:commandButton disabled="false" id="btnRegistrarUser"
+								binding="#{usuarioMB.btnRegistrarUsu}" value="Agregar usuario"
+								update="moduloAdmUsers" action="#{usuarioMB.registrarUsuario}" />
+							<p:commandButton disabled="false" id="btnEliminarUser"
+								binding="#{usuarioMB.btnEliminarUsu}" value="Eliminar usuario"
+								update="moduloAdmUsers" action="#{usuarioMB.eliminarUsuario}" />
+
+						</h:panelGrid>
+
+					</p:panel>
+				</h:form>
+			</f:view>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

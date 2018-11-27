@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 18/05/2017 01:24:35 PM by Hibernate Tools 5.1.4.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="co.edu.icesi.demo.modelo.Familiatextural" optimistic-lock="version" polymorphism="implicit" schema="public" select-before-update="false" table="familiatextural">
+        <id name="familiatexid" type="big_decimal">
+            <column name="familiatexid" precision="20" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="co.edu.icesi.demo.modelo.Grupotextural" embed-xml="true" fetch="select" insert="true" name="grupotextural" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="grupotexturalid" precision="20" scale="0"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="nombrefamtext" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="nombrefamtext" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="abreviaturafamtext" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="abreviaturafamtext" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="grupohomosueloFamiliatexturals" optimistic-lock="true" sort="unsorted" table="grupohomosuelo_familiatextural">
+            <key on-delete="noaction">
+                <column name="familiatexturalid" precision="20" scale="0"/>
+            </key>
+            <one-to-many class="co.edu.icesi.demo.modelo.GrupohomosueloFamiliatextural" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

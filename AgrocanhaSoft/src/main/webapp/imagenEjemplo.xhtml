@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>Probando Imagenes</title>
+	<meta name="content-type" content="text/html; charset=UTF-8" />
+</h:head>
+
+<h:body>
+
+
+	<h:form>
+
+		<h:panelGrid columns="2" border="0">
+
+			<p:dataTable value="#{imagenMB.imagenes}" var="fotoActual">
+				<p:column>
+					<p:graphicImage value="#{imagenMB.fotografia}">
+						<f:param name="bytesActual" value="#{fotoActual.fotografia}" />
+					</p:graphicImage>
+				</p:column>
+			</p:dataTable>
+
+		</h:panelGrid>
+
+	</h:form>
+
+</h:body>
+</html>

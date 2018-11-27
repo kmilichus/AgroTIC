@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>Consulta Aproximación Cenicaña</title>
+	<meta name="content-type" content="text/html; charset=UTF-8" />
+
+</h:head>
+
+<h:body>
+	<ui:composition template="#{zonaGeoMB.URLMenu}">
+		<ui:define name="body">
+			<f:view>
+				<h:form>
+
+					<p:panel header="Modulo Consulta Georeferenciada de Cenicaña"
+						id="moduloCenicana">
+
+						<p:growl />
+
+						<h:panelGrid columns="2" border="0">
+
+							<p:outputLabel value="Latitud" />
+
+							<p:inputText id="txtLatitud" disabled="true"
+								binding="#{zonaGeoMB.txtLatitud}" />
+
+							<p:outputLabel value="Altitud" />
+
+							<p:inputText id="txtAltitud" disabled="true"
+								binding="#{zonaGeoMB.txtAltitud}" />
+
+							<p:outputLabel value="Zona Agroecologica" />
+
+							<p:selectOneMenu id="listaZonasAgro"
+								binding="#{zonaGeoMB.menuZonasAgro}">
+								<f:selectItem itemValue="-1" itemLabel="-- --" />
+								<f:selectItems value="#{zonaGeoMB.itemsZonasAgro}" />
+							</p:selectOneMenu>
+
+							<p:commandButton id="btnConsultarReporte"
+								value="Consultar Reporte Cenicaña"
+								update="moduloCenicana,pnlReporte"
+								action="#{zonaGeoMB.consultarDiagnosticoCenicana}"
+								binding="#{zonaGeoMB.btnConsultarReporteCenicanha}" />
+
+
+						</h:panelGrid>
+
+
+					</p:panel>
+
+					<p:panel header="Reporte de Cenicaña" id="pnlReporte">
+
+						<p:growl />
+
+						<h:panelGrid columns="4" border="0">
+							<p:outputLabel value="Ingenios de la Zona" />
+
+							<p:selectOneMenu id="listaIngenios"
+								binding="#{zonaGeoMB.menuIngenios}">
+								<f:selectItem itemValue="-1" itemLabel="-- --" />
+								<f:selectItems value="#{zonaGeoMB.itemsIngenios}" />
+							</p:selectOneMenu>
+
+							<p:outputLabel value="Familias Texturales de la Zona" />
+
+							<p:selectOneMenu id="listaFamilias"
+								binding="#{zonaGeoMB.menuFamiliasTexturales}">
+								<f:selectItem itemValue="-1" itemLabel="-- --" />
+								<f:selectItems value="#{zonaGeoMB.itemsFamiliasTexturales}" />
+							</p:selectOneMenu>
+
+							<p:outputLabel value="Grupos Texturales de la Zona" />
+							<p:inputTextarea id="txtGrupos"
+								binding="#{zonaGeoMB.txtGruposTexturales}" />
+
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" border="0">
+
+							<p:dataTable var="zona" paginator="true" rows="5"
+								value="#{zonaGeoMB.zonasVariedad}"
+								paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+								rowsPerPageTemplate="5,10,15">
+
+								<p:column headerText="Zona Variedad">
+									<p:outputLabel value="#{zona.nombreznvar}" />
+								</p:column>
+
+								<p:column headerText="Información Zona Variedad">
+									<p:outputLabel value="#{zona.descripcionznvar}" />
+								</p:column>
+
+							</p:dataTable>
+
+							<p:separator />
+							<p:separator />
+							<p:separator />
+							<p:separator />
+
+							<p:dataTable var="zonaActual" paginator="true" rows="5"
+								value="#{zonaGeoMB.caracteristicasZonaAgro}"
+								paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+								rowsPerPageTemplate="5,10,15">
+
+								<p:column headerText="Característica De La Zona">
+									<p:outputLabel value="#{zonaActual.nombreCaract}" />
+								</p:column>
+
+								<p:column headerText="Descripción Agroecologica">
+									<p:outputLabel value="#{zonaActual.descripcionCaract}" />
+								</p:column>
+
+							</p:dataTable>
+
+						</h:panelGrid>
+
+						<h:panelGrid columns="4" border="0">
+							<p:outputLabel value="Grupo Homogeneo Suelo" />
+
+							<p:inputText id="txtGrupoSuelo"
+								binding="#{zonaGeoMB.txtGrupoHomogeneoSuelo}" />
+
+							<p:outputLabel value="Grupo Humedad" />
+
+							<p:inputText id="txtGrupoHumedad"
+								binding="#{zonaGeoMB.txtGrupoHumedad}" />
+
+
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" border="0">
+
+							<p:separator />
+							<p:separator />
+						</h:panelGrid>
+
+
+						<p:dataTable var="medida" paginator="true" rows="5"
+							value="#{zonaGeoMB.datosHumedad}"
+							paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+							rowsPerPageTemplate="5,10,15">
+
+							<p:column headerText="Nivel Humedad">
+								<p:outputLabel value="#{medida.nombreNivelHumedad}" />
+							</p:column>
+
+							<p:column headerText="Tipo Permeabilidad">
+								<p:outputLabel value="#{medida.nombreTipoPermeabilidad}" />
+							</p:column>
+
+							<p:column headerText="Grupo Humedad">
+								<p:outputLabel value="#{medida.nombreGrupoHumedad}" />
+							</p:column>
+
+						</p:dataTable>
+
+					</p:panel>
+				</h:form>
+			</f:view>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

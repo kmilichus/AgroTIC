@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Login AgroCaña </title>
+	<meta name="content-type" content="text/html; charset=UTF-8" />
+</h:head>
+<h:body>
+	<h:form>
+		<p:panel header="Modulo Acesso Agrocaña Soft" id="moduloLogin">
+
+			<p:growl id="msgGrowl" autoUpdate="true" showDetail="false" />
+
+			<h:panelGrid columns="2" border="0">
+
+						<p:outputLabel value="Cedula" />
+
+						<p:inputText id="usernameField" name="j_username"
+						placeholder="Cedula del usuario"  binding="#{usuarioMB.txtCedulaUsu}"/>
+
+						<p:outputLabel value="Password:" />
+
+						<p:password id="passwordField" name="j_password" placeholder="*******"
+							feedback="false" binding="#{usuarioMB.txtPasswordUsu}"/>
+
+						<p:commandButton value="Iniciar Sesión" update="msgGrowl" 
+							action="#{usuarioMB.iniciarSesion}"/>
+
+					</h:panelGrid>
+				</p:panel>
+	</h:form>
+</h:body>
+</html>

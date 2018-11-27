@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 18/05/2017 01:24:35 PM by Hibernate Tools 5.1.4.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="co.edu.icesi.demo.modelo.Informelaboratorio" optimistic-lock="version" polymorphism="implicit" schema="public" select-before-update="false" table="informelaboratorio">
+        <id name="informeid" type="big_decimal">
+            <column name="informeid" precision="20" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="co.edu.icesi.demo.modelo.Estrategiamuestreo" embed-xml="true" fetch="select" insert="true" name="estrategiamuestreo" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="plan_id" not-null="true" precision="20" scale="0"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="nombrehacienda" optimistic-lock="true" type="string" unique="false">
+            <column length="25" name="nombrehacienda"/>
+        </property>
+        <property generated="never" lazy="false" name="nombrelaboratorio" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="nombrelaboratorio"/>
+        </property>
+        <property generated="never" lazy="false" name="fechaexpedicionresultados" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="29" name="fechaexpedicionresultados"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="estrategiamuestreos" optimistic-lock="true" sort="unsorted" table="estrategiamuestreo">
+            <key on-delete="noaction">
+                <column name="informelaboratorioid" precision="20" scale="0" unique="true"/>
+            </key>
+            <one-to-many class="co.edu.icesi.demo.modelo.Estrategiamuestreo" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+#---------------------------------------------------------
+# Diagnosticos AP
+#---------------------------------------------------------
+
+total.diagnostico.fisico = 13
+
+diagnostico.fisico.1=Limitaciones de movimiento de agua			
+diagnostico.fisico.2=Baja difusion de Oxigeno y flujo de gases			
+diagnostico.fisico.3=Baja mineralizacion de MO (Baja actvidad microbiologica)			
+diagnostico.fisico.4=Acumulacion de iones alcalinoterreos			
+diagnostico.fisico.5=Suelo Hidromorfico (Formado en pantano)			
+diagnostico.fisico.6=Coloraciones grises suelo (Glaizeado)			
+diagnostico.fisico.7=Coloracion roja del suelo 			
+diagnostico.fisico.8=Perdida de estructura			
+diagnostico.fisico.9=Limitaciones fisicas temporales			
+diagnostico.fisico.10=Almacenamieto de agua			
+diagnostico.fisico.11=Impedancia			
+diagnostico.fisico.12=Aireción			
+diagnostico.fisico.13=baja retenención hídrica
+
+total.diagnostico.quimico = 13
+
+diagnostico.quimico.1=Alta saturación de calcio (>80 %) Calcificación			
+diagnostico.quimico.2=Presencia de carbonatos, bicarbonatos y cloruros. (Precipitación)			
+diagnostico.quimico.3=Alta saturación de magnesio (PMgI >40 %) Magnesización			
+diagnostico.quimico.4=Alta saturación de sodio (PSI >7 %) Sodificación			
+diagnostico.quimico.5=Azufre alto			
+diagnostico.quimico.6=Manganeso y/o Hierro Alto			
+diagnostico.quimico.7=Alta saturación de aluminio (>30%)			
+diagnostico.quimico.8=Baja disponibilidad de Fosforo (Precipitación)			
+diagnostico.quimico.9=Baja disponibilidad de Calcio			
+diagnostico.quimico.10=Baja disponibilidad de elementos menores (menos molibdeno)			
+diagnostico.quimico.11=Sulfatos altos			
+diagnostico.quimico.12=Contenido de Aluminio			
+diagnostico.quimico.13=Salinidad en el suelo	

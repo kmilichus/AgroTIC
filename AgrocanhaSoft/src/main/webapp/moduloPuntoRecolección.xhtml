@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>Capturar de Coordenadas</title>
+	<meta name="content-type" content="text/html; charset=UTF-8" />
+</h:head>
+
+<h:body>
+	<ui:composition template="#{puntosMB.URLMenu}">
+		<ui:define name="body">
+			<f:view>
+
+				<h:form enctype="multipart/form-data">
+
+					<p:panel header="Modulo Registro Puntos Recolección"
+						id="moduloPunto">
+
+						<p:growl />
+
+						<h:panelGrid columns="2" border="0">
+
+							<p:outputLabel value="Terreno:" />
+							<p:selectOneMenu id="ListaTerrenos"
+								binding="#{puntosMB.menuTerrenos}">
+								<f:selectItem itemValue="-1"
+									itemLabel="--SELECCIONE UN TERRENO--" />
+								<f:selectItems value="#{puntosMB.itemsTerrenos}"></f:selectItems>
+								<p:ajax update="moduloPunto"
+									listener="#{puntosMB.cargarLotesDelTerreno}" />
+								<p:ajax update="moduloPunto"
+									listener="#{puntosMB.cargarEstrategiasDelTerreno}" />
+
+							</p:selectOneMenu>
+
+							<p:outputLabel value="Código Plan de muestreo:" />
+							<p:selectOneMenu id="ListaCodigosPlan"
+								binding="#{puntosMB.menuEstrategiasMuestreo}">
+								<f:selectItem itemValue="-1"
+									itemLabel="--SELECCIONE UN CODIGO--" />
+								<f:selectItems value="#{puntosMB.itemsEstrategiasMuestreo}"></f:selectItems>
+							</p:selectOneMenu>
+
+							<p:outputLabel value="Lote:" />
+							<p:selectOneMenu id="ListaLotes" binding="#{puntosMB.menuLotes}">
+								<f:selectItem itemValue="-1" itemLabel="--SELECCIONE UN LOTE--" />
+								<f:selectItems value="#{puntosMB.itemsLotes}"></f:selectItems>
+							</p:selectOneMenu>
+
+
+							<p:outputLabel value="Altitud" />
+
+							<p:inputText id="txtAltitud" binding="#{puntosMB.txtAltitud}" />
+
+							<p:outputLabel value="Longitud" />
+
+							<p:inputText id="txtLongitud" binding="#{puntosMB.txtLatitud}" />
+
+							<p:outputLabel value="Cargar Fotografía" />
+
+							<p:fileUpload fileUploadListener="#{puntosMB.cargarFotografia}"
+								mode="advanced" multiple="true"
+								sizeLimit="512000" allowTypes="/(\.|\/)(gif|jpe?g|png)$/"
+								uploadLabel="Cargar Imagen" cancelLabel="Cancelar"
+								label="Elegir Imagen" value="#{puntosMB.fileCargado}" />
+
+							<p:commandButton id="btnRegistrarPunto"
+								value="Registrar Punto Recoleccion" update="moduloPunto"
+								action="#{puntosMB.registrarPuntoRecoleccion}" />
+
+						</h:panelGrid>
+					</p:panel>
+				</h:form>
+
+
+			</f:view>
+		</ui:define>
+	</ui:composition>
+
+
+</h:body>
+</html>

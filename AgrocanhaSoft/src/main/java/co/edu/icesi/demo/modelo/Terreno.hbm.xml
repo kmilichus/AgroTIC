@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 18/05/2017 01:24:35 PM by Hibernate Tools 5.1.4.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="co.edu.icesi.demo.modelo.Terreno" optimistic-lock="version" polymorphism="implicit" schema="public" select-before-update="false" table="terreno">
+        <id name="terrid" type="big_decimal">
+            <column name="terrid" precision="20" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="nombreterr" optimistic-lock="true" type="string" unique="false">
+            <column length="25" name="nombreterr" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="estrategiamuestreos" optimistic-lock="true" sort="unsorted" table="estrategiamuestreo">
+            <key on-delete="noaction">
+                <column name="terreno_terrid" precision="20" scale="0"/>
+            </key>
+            <one-to-many class="co.edu.icesi.demo.modelo.Estrategiamuestreo" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="lotes" optimistic-lock="true" sort="unsorted" table="lote">
+            <key on-delete="noaction">
+                <column name="terreno_terrid" precision="20" scale="0"/>
+            </key>
+            <one-to-many class="co.edu.icesi.demo.modelo.Lote" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

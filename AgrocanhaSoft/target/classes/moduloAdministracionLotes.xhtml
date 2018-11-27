@@ -1,0 +1,71 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>Administración De Lotes</title>
+	<meta name="content-type" content="text/html; charset=UTF-8" />
+</h:head>
+
+<h:body>
+	<ui:composition template="#{suelosMB.URLMenu}">
+		<ui:define name="body">
+			<f:view>
+				<h:form>
+
+
+					<p:panel header="Modulo administración Lotes" id="moduloLotes">
+
+						<p:growl />
+
+						<h:panelGrid columns="2" border="0">
+
+							<p:outputLabel value="Terreno" />
+							<p:selectOneMenu id="ListaTerrenos"
+								binding="#{suelosMB.menuTerrenos}">
+								<f:selectItem itemValue="-1"
+									itemLabel="--SELECCIONE UN TERRENO--" />
+								<f:selectItems value="#{suelosMB.itemsTerrenos}" />
+								<p:ajax listener="#{suelosMB.cargarLotesDelTerreno}"
+									update="moduloLotes" />
+							</p:selectOneMenu>
+
+							<p:outputLabel value="Lote" />
+							<p:selectOneMenu id="ListaLotes" binding="#{suelosMB.menuLotes}">
+								<f:selectItem itemValue="-1" itemLabel="--SELECCIONE UN LOTE--" />
+								<f:selectItems value="#{suelosMB.itemsLotes}" />
+								<p:ajax listener="#{suelosMB.cargarInfoLote}"
+									update="moduloLotes" />
+							</p:selectOneMenu>
+
+							<p:outputLabel value="Nombre:" />
+							<p:inputText id="txtNameLote" placeholder="Nombre del lote"
+								binding="#{suelosMB.txtNombreLote}" />
+
+							<p:outputLabel value="Descripción:" />
+							<p:inputText id="txtDescLote" placeholder="Descripción lote"
+								binding="#{suelosMB.txtDescripcionLote}" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="3" border="0">
+
+							<p:commandButton id="btnAgregarLote" value="Agregar lote"
+								update="moduloLotes" action="#{suelosMB.registrarLote}"
+								binding="#{suelosMB.btnRegistrarLote}" />
+							<p:commandButton id="btnEliminarLote" value="Eliminar lote"
+								update="moduloLotes" action="#{suelosMB.eliminarLote}"
+								binding="#{suelosMB.btnEliminarLote}" />
+							<p:commandButton id="btnActualizarLote" value="Actualizar lote"
+								update="moduloLotes" action="#{suelosMB.actualizarDatosLote}"
+								binding="#{suelosMB.btnModificarLote}" />
+						</h:panelGrid>
+
+					</p:panel>
+				</h:form>
+			</f:view>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

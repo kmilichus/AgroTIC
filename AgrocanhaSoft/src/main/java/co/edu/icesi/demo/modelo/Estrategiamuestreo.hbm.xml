@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 18/05/2017 01:24:35 PM by Hibernate Tools 5.1.4.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="co.edu.icesi.demo.modelo.Estrategiamuestreo" optimistic-lock="version" polymorphism="implicit" schema="public" select-before-update="false" table="estrategiamuestreo">
+        <id name="planmid" type="big_decimal">
+            <column name="planmid" precision="20" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="co.edu.icesi.demo.modelo.Diagnosticoagronomo" embed-xml="true" fetch="select" insert="true" name="diagnosticoagronomo" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="diagnosticoid" precision="20" scale="0" unique="true"/>
+        </many-to-one>
+        <many-to-one class="co.edu.icesi.demo.modelo.Informelaboratorio" embed-xml="true" fetch="select" insert="true" name="informelaboratorio" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="informelaboratorioid" precision="20" scale="0" unique="true"/>
+        </many-to-one>
+        <many-to-one class="co.edu.icesi.demo.modelo.Terreno" embed-xml="true" fetch="select" insert="true" name="terreno" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="terreno_terrid" precision="20" scale="0"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="codigoest" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="codigoest" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="fechacreacion" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="29" name="fechacreacion" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="diagnosticoagronomos" optimistic-lock="true" sort="unsorted" table="diagnosticoagronomo">
+            <key on-delete="noaction">
+                <column name="plan_id" not-null="true" precision="20" scale="0"/>
+            </key>
+            <one-to-many class="co.edu.icesi.demo.modelo.Diagnosticoagronomo" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="estrategiaLotes" optimistic-lock="true" sort="unsorted" table="estrategia_lote">
+            <key on-delete="noaction">
+                <column name="estmuestreo_planmid" precision="20" scale="0"/>
+            </key>
+            <one-to-many class="co.edu.icesi.demo.modelo.EstrategiaLote" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="informelaboratorios" optimistic-lock="true" sort="unsorted" table="informelaboratorio">
+            <key on-delete="noaction">
+                <column name="plan_id" not-null="true" precision="20" scale="0"/>
+            </key>
+            <one-to-many class="co.edu.icesi.demo.modelo.Informelaboratorio" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

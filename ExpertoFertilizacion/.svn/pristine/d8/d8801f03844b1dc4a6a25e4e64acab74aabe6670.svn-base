@@ -1,0 +1,584 @@
+//created on: 1/06/2015
+package com.expertobotanico.drools
+
+
+
+//list any import classes here.
+import com.expertobotanico.drools.model.*
+
+
+//declare any global variables here
+dialect "mvel"
+
+rule "0"
+    when
+        $p : Planta(des==0)               
+    then
+		System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+
+
+end
+
+rule "1"
+    when
+        $p : Planta(des==1)               
+    then
+  		System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("    >|-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("        |-(11)ASERRADAS, OLOROSAS, FLORES EN CABECITA");
+        System.out.println("        |-(12)ESTÍPULAS OLOR FRÍJOL");
+        System.out.println("        |-(13)ESTÍPULAS, OTRO OLOR");
+        System.out.println("        |-(14)HOJAS (FRONDES) CON SOROS (PIOJITOS)");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+      
+end
+
+rule "11"
+    when
+        $p : Planta(des==11)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("    >|-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("       >|-(11)ASERRADAS, OLOROSAS, FLORES EN CABECITA");
+        System.out.println("          >||=><<<FAMILIA>>>: Compositae \n");
+        System.out.println("        |-(12)ESTÍPULAS OLOR FRÍJOL");
+        System.out.println("        |-(13)ESTÍPULAS, OTRO OLOR");
+        System.out.println("        |-(14)HOJAS (FRONDES) CON SOROS (PIOJITOS)");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+      
+end
+
+rule "12"
+    when
+        $p : Planta(des==12)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("    >|-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("        |-(11)ASERRADAS, OLOROSAS, FLORES EN CABECITA");
+        System.out.println("       >|-(12)ESTÍPULAS OLOR FRÍJOL");
+        System.out.println("          >||=><<<FAMILIA>>>: Leguminosae \n");
+        System.out.println("        |-(13)ESTÍPULAS, OTRO OLOR");
+        System.out.println("        |-(14)HOJAS (FRONDES) CON SOROS (PIOJITOS)");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+     
+end
+
+rule "13"
+    when
+        $p : Planta(des==13)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("    >|-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("        |-(11)ASERRADAS, OLOROSAS, FLORES EN CABECITA");
+        System.out.println("        |-(12)ESTÍPULAS OLOR FRÍJOL");        
+        System.out.println("       >|-(13)ESTÍPULAS, OTRO OLOR");
+        System.out.println("          >||=><<<FAMILIA>>>: Rosaceae \n");
+        System.out.println("        |-(14)HOJAS (FRONDES) CON SOROS (PIOJITOS)");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+     
+end
+
+rule "14"
+    when
+        $p : Planta(des==14)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("    >|-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("        |-(11)ASERRADAS, OLOROSAS, FLORES EN CABECITA");
+        System.out.println("        |-(12)ESTÍPULAS OLOR FRÍJOL");        
+        System.out.println("        |-(13)ESTÍPULAS, OTRO OLOR");        
+        System.out.println("       >|-(14)HOJAS (FRONDES) CON SOROS (PIOJITOS)");
+        System.out.println("          >||=><<<FAMILIA>>>: Helechos \n");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+      
+end
+
+rule "2"
+    when
+        $p : Planta(des==2)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("    >|-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("        |-(21)ESTÍPULAS LIBRES, PELUDITAS");
+        System.out.println("        |-(22)ESTÍPULAS CONNADAS O TUBULARES");        
+        System.out.println("        |-(23)ESTÍPULAS LIBRES, EXUDADO BLANCO, FRUTO TRICOCO");        
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+      
+end
+
+rule "21"
+    when
+        $p : Planta(des==21)               
+    then
+    
+        System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("    >|-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("       >|-(21)ESTÍPULAS LIBRES, PELUDITAS");
+        System.out.println("          >||=><<<FAMILIA>>>: Lythraceae \n");
+        System.out.println("        |-(22)ESTÍPULAS CONNADAS O TUBULARES");        
+        System.out.println("        |-(23)ESTÍPULAS LIBRES, EXUDADO BLANCO, FRUTO TRICOCO");        
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+      
+
+end
+
+rule "22"
+    when
+        $p : Planta(des==22)               
+    then
+    
+        System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("    >|-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("        |-(21)ESTÍPULAS LIBRES, PELUDITAS"); 
+        System.out.println("       >|-(22)ESTÍPULAS CONNADAS O TUBULARES");
+        System.out.println("          >||=><<<FAMILIA>>>: Rubiaceae \n");        
+        System.out.println("        |-(23)ESTÍPULAS LIBRES, EXUDADO BLANCO, FRUTO TRICOCO");        
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+     
+
+end
+
+rule "23"
+    when
+        $p : Planta(des==23)               
+    then
+    
+        System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("    >|-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("        |-(21)ESTÍPULAS LIBRES, PELUDITAS"); 
+        System.out.println("        |-(22)ESTÍPULAS CONNADAS O TUBULARES");  
+        System.out.println("       >|-(23)ESTÍPULAS LIBRES, EXUDADO BLANCO, FRUTO TRICOCO");  
+        System.out.println("          >||=><<<FAMILIA>>>: Euphorbiaceae \n");          
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+      
+
+end
+
+
+rule "3"
+    when
+        $p : Planta(des==3)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("        |-(31)TALLITOS CUADRADOS O REDONDEADOS, BRÁCTEAS FLORALES");
+        System.out.println("        |-(32)SEMEJANTE PERO SIN BRÁCTEAS, PELOS GRANDULÍFEROS");
+        System.out.println("        |-(33)HOJAS ASERRADAS, AROMÁTICAS, FLOR EN PARAGÜITAS SOBRE CABECITAS");
+        System.out.println("        |-(34)SIMILAR A LA ANTERIOR PERO FLORES EN FORMA DE LABIOS O TROMPETILLAS");
+        System.out.println("        |-(35)PARECIDA A LAS ANTERIORES PERO LA MAYORÍA INODORAS");
+        System.out.println("        |-(36)HOJAS PINTADAS DE ROJO O VIOLETA O TODAS COLOREADAS POR EL ENVÉS, FLORES TUBULARES ROJIZAS O AMARILLAS");
+        System.out.println("        |-(37)HOJAS CURVINERVIAS, TALLOS CUADRADOS O REDONDOS, MUCHAS PELUDITAS");
+        System.out.println("        |-(38)NUDOS ENGROSADOS, A VECES COLOREADOS, ENTERAS, NERVIOS POCO MARCADOS");
+        System.out.println("        |-(39)HOJAS OPUESTAS O VERTICILADAS, CON TALLOS Y HOJAS CARNOSOS, FLOR EN CHURRUSCO");
+        System.out.println("        |-(310)HOJAS OPUESTAS O VERTICILADAS, RAÍZ CON OLOR A MENTOL");           
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+       
+end
+
+rule "31"
+    when
+        $p : Planta(des==31)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("       >|-(31)TALLITOS CUADRADOS O REDONDEADOS, BRÁCTEAS FLORALES");
+        System.out.println("          >||=><<<FAMILIA>>>: Acanthacea \n"); 
+        System.out.println("        |-(32)SEMEJANTE PERO SIN BRÁCTEAS, PELOS GRANDULÍFEROS");
+        System.out.println("        |-(33)HOJAS ASERRADAS, AROMÁTICAS, FLOR EN PARAGÜITAS SOBRE CABECITAS");
+        System.out.println("        |-(34)SIMILAR A LA ANTERIOR PERO FLORES EN FORMA DE LABIOS O TROMPETILLAS");
+        System.out.println("        |-(35)PARECIDA A LAS ANTERIORES PERO LA MAYORÍA INODORAS");
+        System.out.println("        |-(36)HOJAS PINTADAS DE ROJO O VIOLETA O TODAS COLOREADAS POR EL ENVÉS, FLORES TUBULARES ROJIZAS O AMARILLAS");
+        System.out.println("        |-(37)HOJAS CURVINERVIAS, TALLOS CUADRADOS O REDONDOS, MUCHAS PELUDITAS");
+        System.out.println("        |-(38)NUDOS ENGROSADOS, A VECES COLOREADOS, ENTERAS, NERVIOS POCO MARCADOS");
+        System.out.println("        |-(39)HOJAS OPUESTAS O VERTICILADAS, CON TALLOS Y HOJAS CARNOSOS, FLOR EN CHURRUSCO");
+        System.out.println("        |-(310)HOJAS OPUESTAS O VERTICILADAS, RAÍZ CON OLOR A MENTOL");           
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+
+end
+
+rule "32"
+    when
+        $p : Planta(des==32)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("        |-(31)TALLITOS CUADRADOS O REDONDEADOS, BRÁCTEAS FLORALES");
+        System.out.println("       >|-(32)SEMEJANTE PERO SIN BRÁCTEAS, PELOS GRANDULÍFEROS");
+        System.out.println("          >||=><<<FAMILIA>>>: Lythracea \n"); 
+        System.out.println("        |-(33)HOJAS ASERRADAS, AROMÁTICAS, FLOR EN PARAGÜITAS SOBRE CABECITAS");
+        System.out.println("        |-(34)SIMILAR A LA ANTERIOR PERO FLORES EN FORMA DE LABIOS O TROMPETILLAS");
+        System.out.println("        |-(35)PARECIDA A LAS ANTERIORES PERO LA MAYORÍA INODORAS");
+        System.out.println("        |-(36)HOJAS PINTADAS DE ROJO O VIOLETA O TODAS COLOREADAS POR EL ENVÉS, FLORES TUBULARES ROJIZAS O AMARILLAS");
+        System.out.println("        |-(37)HOJAS CURVINERVIAS, TALLOS CUADRADOS O REDONDOS, MUCHAS PELUDITAS");
+        System.out.println("        |-(38)NUDOS ENGROSADOS, A VECES COLOREADOS, ENTERAS, NERVIOS POCO MARCADOS");
+        System.out.println("        |-(39)HOJAS OPUESTAS O VERTICILADAS, CON TALLOS Y HOJAS CARNOSOS, FLOR EN CHURRUSCO");
+        System.out.println("        |-(310)HOJAS OPUESTAS O VERTICILADAS, RAÍZ CON OLOR A MENTOL");           
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+
+end
+rule "33"
+    when
+        $p : Planta(des==33)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("        |-(31)TALLITOS CUADRADOS O REDONDEADOS, BRÁCTEAS FLORALES");
+        System.out.println("        |-(32)SEMEJANTE PERO SIN BRÁCTEAS, PELOS GRANDULÍFEROS");
+        System.out.println("       >|-(33)HOJAS ASERRADAS, AROMÁTICAS, FLOR EN PARAGÜITAS SOBRE CABECITAS");
+        System.out.println("          >||=><<<FAMILIA>>>: Compositae \n"); 
+        System.out.println("        |-(34)SIMILAR A LA ANTERIOR PERO FLORES EN FORMA DE LABIOS O TROMPETILLAS");
+        System.out.println("        |-(35)PARECIDA A LAS ANTERIORES PERO LA MAYORÍA INODORAS");
+        System.out.println("        |-(36)HOJAS PINTADAS DE ROJO O VIOLETA O TODAS COLOREADAS POR EL ENVÉS, FLORES TUBULARES ROJIZAS O AMARILLAS");
+        System.out.println("        |-(37)HOJAS CURVINERVIAS, TALLOS CUADRADOS O REDONDOS, MUCHAS PELUDITAS");
+        System.out.println("        |-(38)NUDOS ENGROSADOS, A VECES COLOREADOS, ENTERAS, NERVIOS POCO MARCADOS");
+        System.out.println("        |-(39)HOJAS OPUESTAS O VERTICILADAS, CON TALLOS Y HOJAS CARNOSOS, FLOR EN CHURRUSCO");
+        System.out.println("        |-(310)HOJAS OPUESTAS O VERTICILADAS, RAÍZ CON OLOR A MENTOL");           
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+
+end
+rule "34"
+    when
+        $p : Planta(des==34)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("        |-(31)TALLITOS CUADRADOS O REDONDEADOS, BRÁCTEAS FLORALES");
+        System.out.println("        |-(32)SEMEJANTE PERO SIN BRÁCTEAS, PELOS GRANDULÍFEROS");
+        System.out.println("        |-(33)HOJAS ASERRADAS, AROMÁTICAS, FLOR EN PARAGÜITAS SOBRE CABECITAS");
+        System.out.println("       >|-(34)SIMILAR A LA ANTERIOR PERO FLORES EN FORMA DE LABIOS O TROMPETILLAS");
+        System.out.println("          >||=><<<FAMILIA>>>: Lamiaceae o Verbenacea \n"); 
+        System.out.println("        |-(35)PARECIDA A LAS ANTERIORES PERO LA MAYORÍA INODORAS");
+        System.out.println("        |-(36)HOJAS PINTADAS DE ROJO O VIOLETA O TODAS COLOREADAS POR EL ENVÉS, FLORES TUBULARES ROJIZAS O AMARILLAS");
+        System.out.println("        |-(37)HOJAS CURVINERVIAS, TALLOS CUADRADOS O REDONDOS, MUCHAS PELUDITAS");
+        System.out.println("        |-(38)NUDOS ENGROSADOS, A VECES COLOREADOS, ENTERAS, NERVIOS POCO MARCADOS");
+        System.out.println("        |-(39)HOJAS OPUESTAS O VERTICILADAS, CON TALLOS Y HOJAS CARNOSOS, FLOR EN CHURRUSCO");
+        System.out.println("        |-(310)HOJAS OPUESTAS O VERTICILADAS, RAÍZ CON OLOR A MENTOL");           
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+
+end
+rule "35"
+    when
+        $p : Planta(des==35)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("        |-(31)TALLITOS CUADRADOS O REDONDEADOS, BRÁCTEAS FLORALES");
+        System.out.println("        |-(32)SEMEJANTE PERO SIN BRÁCTEAS, PELOS GRANDULÍFEROS");
+        System.out.println("        |-(33)HOJAS ASERRADAS, AROMÁTICAS, FLOR EN PARAGÜITAS SOBRE CABECITAS");
+        System.out.println("        |-(34)SIMILAR A LA ANTERIOR PERO FLORES EN FORMA DE LABIOS O TROMPETILLAS");
+        System.out.println("       >|-(35)PARECIDA A LAS ANTERIORES PERO LA MAYORÍA INODORAS");
+        System.out.println("          >||=><<<FAMILIA>>>: Scrophulariaceae \n"); 
+        System.out.println("        |-(36)HOJAS PINTADAS DE ROJO O VIOLETA O TODAS COLOREADAS POR EL ENVÉS, FLORES TUBULARES ROJIZAS O AMARILLAS");
+        System.out.println("        |-(37)HOJAS CURVINERVIAS, TALLOS CUADRADOS O REDONDOS, MUCHAS PELUDITAS");
+        System.out.println("        |-(38)NUDOS ENGROSADOS, A VECES COLOREADOS, ENTERAS, NERVIOS POCO MARCADOS");
+        System.out.println("        |-(39)HOJAS OPUESTAS O VERTICILADAS, CON TALLOS Y HOJAS CARNOSOS, FLOR EN CHURRUSCO");
+        System.out.println("        |-(310)HOJAS OPUESTAS O VERTICILADAS, RAÍZ CON OLOR A MENTOL");           
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+
+end
+rule "36"
+    when
+        $p : Planta(des==36)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("        |-(31)TALLITOS CUADRADOS O REDONDEADOS, BRÁCTEAS FLORALES");
+        System.out.println("        |-(32)SEMEJANTE PERO SIN BRÁCTEAS, PELOS GRANDULÍFEROS");
+        System.out.println("        |-(33)HOJAS ASERRADAS, AROMÁTICAS, FLOR EN PARAGÜITAS SOBRE CABECITAS");
+        System.out.println("        |-(34)SIMILAR A LA ANTERIOR PERO FLORES EN FORMA DE LABIOS O TROMPETILLAS");
+        System.out.println("        |-(35)PARECIDA A LAS ANTERIORES PERO LA MAYORÍA INODORAS");
+        System.out.println("       >|-(36)HOJAS PINTADAS DE ROJO O VIOLETA O TODAS COLOREADAS POR EL ENVÉS, FLORES TUBULARES ROJIZAS O AMARILLAS");
+        System.out.println("          >||=><<<FAMILIA>>>: Genseriaceae \n"); 
+        System.out.println("        |-(37)HOJAS CURVINERVIAS, TALLOS CUADRADOS O REDONDOS, MUCHAS PELUDITAS");
+        System.out.println("        |-(38)NUDOS ENGROSADOS, A VECES COLOREADOS, ENTERAS, NERVIOS POCO MARCADOS");
+        System.out.println("        |-(39)HOJAS OPUESTAS O VERTICILADAS, CON TALLOS Y HOJAS CARNOSOS, FLOR EN CHURRUSCO");
+        System.out.println("        |-(310)HOJAS OPUESTAS O VERTICILADAS, RAÍZ CON OLOR A MENTOL");           
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+
+end
+rule "37"
+    when
+        $p : Planta(des==37)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("        |-(31)TALLITOS CUADRADOS O REDONDEADOS, BRÁCTEAS FLORALES");
+        System.out.println("        |-(32)SEMEJANTE PERO SIN BRÁCTEAS, PELOS GRANDULÍFEROS");
+        System.out.println("        |-(33)HOJAS ASERRADAS, AROMÁTICAS, FLOR EN PARAGÜITAS SOBRE CABECITAS");
+        System.out.println("        |-(34)SIMILAR A LA ANTERIOR PERO FLORES EN FORMA DE LABIOS O TROMPETILLAS");
+        System.out.println("        |-(35)PARECIDA A LAS ANTERIORES PERO LA MAYORÍA INODORAS");
+        System.out.println("        |-(36)HOJAS PINTADAS DE ROJO O VIOLETA O TODAS COLOREADAS POR EL ENVÉS, FLORES TUBULARES ROJIZAS O AMARILLAS");
+        System.out.println("       >|-(37)HOJAS CURVINERVIAS, TALLOS CUADRADOS O REDONDOS, MUCHAS PELUDITAS");
+        System.out.println("          >||=><<<FAMILIA>>>: Melastomataceae \n"); 
+        System.out.println("        |-(38)NUDOS ENGROSADOS, A VECES COLOREADOS, ENTERAS, NERVIOS POCO MARCADOS");
+        System.out.println("        |-(39)HOJAS OPUESTAS O VERTICILADAS, CON TALLOS Y HOJAS CARNOSOS, FLOR EN CHURRUSCO");
+        System.out.println("        |-(310)HOJAS OPUESTAS O VERTICILADAS, RAÍZ CON OLOR A MENTOL");           
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+
+end
+rule "38"
+    when
+        $p : Planta(des==38)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("        |-(31)TALLITOS CUADRADOS O REDONDEADOS, BRÁCTEAS FLORALES");
+        System.out.println("        |-(32)SEMEJANTE PERO SIN BRÁCTEAS, PELOS GRANDULÍFEROS");
+        System.out.println("        |-(33)HOJAS ASERRADAS, AROMÁTICAS, FLOR EN PARAGÜITAS SOBRE CABECITAS");
+        System.out.println("        |-(34)SIMILAR A LA ANTERIOR PERO FLORES EN FORMA DE LABIOS O TROMPETILLAS");
+        System.out.println("        |-(35)PARECIDA A LAS ANTERIORES PERO LA MAYORÍA INODORAS");
+        System.out.println("        |-(36)HOJAS PINTADAS DE ROJO O VIOLETA O TODAS COLOREADAS POR EL ENVÉS, FLORES TUBULARES ROJIZAS O AMARILLAS");
+        System.out.println("        |-(37)HOJAS CURVINERVIAS, TALLOS CUADRADOS O REDONDOS, MUCHAS PELUDITAS");
+        System.out.println("       >|-(38)NUDOS ENGROSADOS, A VECES COLOREADOS, ENTERAS, NERVIOS POCO MARCADOS");
+        System.out.println("          >||=><<<FAMILIA>>>: Nyctaginacea \n"); 
+        System.out.println("        |-(39)HOJAS OPUESTAS O VERTICILADAS, CON TALLOS Y HOJAS CARNOSOS, FLOR EN CHURRUSCO");
+        System.out.println("        |-(310)HOJAS OPUESTAS O VERTICILADAS, RAÍZ CON OLOR A MENTOL");           
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+
+end
+rule "39"
+    when
+        $p : Planta(des==39)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("        |-(31)TALLITOS CUADRADOS O REDONDEADOS, BRÁCTEAS FLORALES");
+        System.out.println("        |-(32)SEMEJANTE PERO SIN BRÁCTEAS, PELOS GRANDULÍFEROS");
+        System.out.println("        |-(33)HOJAS ASERRADAS, AROMÁTICAS, FLOR EN PARAGÜITAS SOBRE CABECITAS");
+        System.out.println("        |-(34)SIMILAR A LA ANTERIOR PERO FLORES EN FORMA DE LABIOS O TROMPETILLAS");
+        System.out.println("        |-(35)PARECIDA A LAS ANTERIORES PERO LA MAYORÍA INODORAS");
+        System.out.println("        |-(36)HOJAS PINTADAS DE ROJO O VIOLETA O TODAS COLOREADAS POR EL ENVÉS, FLORES TUBULARES ROJIZAS O AMARILLAS");
+        System.out.println("        |-(37)HOJAS CURVINERVIAS, TALLOS CUADRADOS O REDONDOS, MUCHAS PELUDITAS");
+        System.out.println("        |-(38)NUDOS ENGROSADOS, A VECES COLOREADOS, ENTERAS, NERVIOS POCO MARCADOS");
+        System.out.println("       >|-(39)HOJAS OPUESTAS O VERTICILADAS, CON TALLOS Y HOJAS CARNOSOS, FLOR EN CHURRUSCO");
+        System.out.println("          >||=><<<FAMILIA>>>: Piperaceae \n"); 
+        System.out.println("        |-(310)HOJAS OPUESTAS O VERTICILADAS, RAÍZ CON OLOR A MENTOL");           
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+
+end
+rule "310"
+    when
+        $p : Planta(des==310)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("        |-(31)TALLITOS CUADRADOS O REDONDEADOS, BRÁCTEAS FLORALES");
+        System.out.println("        |-(32)SEMEJANTE PERO SIN BRÁCTEAS, PELOS GRANDULÍFEROS");
+        System.out.println("        |-(33)HOJAS ASERRADAS, AROMÁTICAS, FLOR EN PARAGÜITAS SOBRE CABECITAS");
+        System.out.println("        |-(34)SIMILAR A LA ANTERIOR PERO FLORES EN FORMA DE LABIOS O TROMPETILLAS");
+        System.out.println("        |-(35)PARECIDA A LAS ANTERIORES PERO LA MAYORÍA INODORAS");
+        System.out.println("        |-(36)HOJAS PINTADAS DE ROJO O VIOLETA O TODAS COLOREADAS POR EL ENVÉS, FLORES TUBULARES ROJIZAS O AMARILLAS");
+        System.out.println("        |-(37)HOJAS CURVINERVIAS, TALLOS CUADRADOS O REDONDOS, MUCHAS PELUDITAS");
+        System.out.println("        |-(38)NUDOS ENGROSADOS, A VECES COLOREADOS, ENTERAS, NERVIOS POCO MARCADOS");
+        System.out.println("        |-(39)HOJAS OPUESTAS O VERTICILADAS, CON TALLOS Y HOJAS CARNOSOS, FLOR EN CHURRUSCO");
+        System.out.println("       >|-(310)HOJAS OPUESTAS O VERTICILADAS, RAÍZ CON OLOR A MENTOL");
+        System.out.println("          >| |=><<<FAMILIA>>>: Polygalaceae \n");         
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+
+end
+
+rule "4"
+    when
+        $p : Planta(des==4)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");        
+        System.out.println("    >|-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+        System.out.println("        |-(41)ESTÍPULAS LIBRES, CORTEZA EN TIRAS LARGAS. HOJAS PENNI O PALMALOBULADAS, ASERRADAS");
+        System.out.println("        |-(42)SEMEJANTE PERO CON PELOS ESTRELLADOS");
+        System.out.println("        |-(43)ESTÍPULAS LIBRES, TALLOS Y HOJAS SUCULENTAS, BASE DE LA HOJA ASIMÉTRICA, MUCHAS COLOREADAS");
+        System.out.println("        |-(44)ESTÍPULAS CILIADAS, HOJAS DE BORDE ASERRADO");
+        System.out.println("        |-(45)ESTÍPULAS BAJANTES AL PECÍOLO O EN GORRITO, RAÍCES ADVENTICIAS, OLOROSAS");
+        System.out.println("        |-(46)ESTIPULAS LIBRES, HOJAS DENTADAS O ASERRADAS CON TRES A CINCO NERVIOS BASALES, PELUDAS");
+
+end
+
+
+
+rule "41"
+    when
+        $p : Planta(des==41)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");        
+        System.out.println("    >|-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+        System.out.println("       >|-(41)ESTÍPULAS LIBRES, CORTEZA EN TIRAS LARGAS. HOJAS PENNI O PALMALOBULADAS, ASERRADAS");
+        System.out.println("          >||=><<<FAMILIA>>>: Tiliaceae \n"); 
+        System.out.println("        |-(42)SEMEJANTE PERO CON PELOS ESTRELLADOS");
+        System.out.println("        |-(43)ESTÍPULAS LIBRES, TALLOS Y HOJAS SUCULENTAS, BASE DE LA HOJA ASIMÉTRICA, MUCHAS COLOREADAS");
+        System.out.println("        |-(44)ESTÍPULAS CILIADAS, HOJAS DE BORDE ASERRADO");
+        System.out.println("        |-(45)ESTÍPULAS BAJANTES AL PECÍOLO O EN GORRITO, RAÍCES ADVENTICIAS, OLOROSAS");
+        System.out.println("        |-(46)ESTIPULAS LIBRES, HOJAS DENTADAS O ASERRADAS CON TRES A CINCO NERVIOS BASALES, PELUDAS");
+
+end
+
+rule "42"
+    when
+        $p : Planta(des==42)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");        
+        System.out.println("    >|-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+        System.out.println("        |-(41)ESTÍPULAS LIBRES, CORTEZA EN TIRAS LARGAS. HOJAS PENNI O PALMALOBULADAS, ASERRADAS");
+        System.out.println("       >|-(42)SEMEJANTE PERO CON PELOS ESTRELLADOS");
+        System.out.println("          >||=><<<FAMILIA>>>: Malvaceae \n"); 
+        System.out.println("        |-(43)ESTÍPULAS LIBRES, TALLOS Y HOJAS SUCULENTAS, BASE DE LA HOJA ASIMÉTRICA, MUCHAS COLOREADAS");
+        System.out.println("        |-(44)ESTÍPULAS CILIADAS, HOJAS DE BORDE ASERRADO");
+        System.out.println("        |-(45)ESTÍPULAS BAJANTES AL PECÍOLO O EN GORRITO, RAÍCES ADVENTICIAS, OLOROSAS");
+        System.out.println("        |-(46)ESTIPULAS LIBRES, HOJAS DENTADAS O ASERRADAS CON TRES A CINCO NERVIOS BASALES, PELUDAS");
+
+end
+
+rule "43"
+    when
+        $p : Planta(des==43)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");        
+        System.out.println("    >|-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+        System.out.println("        |-(41)ESTÍPULAS LIBRES, CORTEZA EN TIRAS LARGAS. HOJAS PENNI O PALMALOBULADAS, ASERRADAS");
+        System.out.println("        |-(42)SEMEJANTE PERO CON PELOS ESTRELLADOS");
+        System.out.println("       >|-(43)ESTÍPULAS LIBRES, TALLOS Y HOJAS SUCULENTAS, BASE DE LA HOJA ASIMÉTRICA, MUCHAS COLOREADAS");
+        System.out.println("          >||=><<<FAMILIA>>>: Begoniaceae \n"); 
+        System.out.println("        |-(44)ESTÍPULAS CILIADAS, HOJAS DE BORDE ASERRADO");
+        System.out.println("        |-(45)ESTÍPULAS BAJANTES AL PECÍOLO O EN GORRITO, RAÍCES ADVENTICIAS, OLOROSAS");
+        System.out.println("        |-(46)ESTIPULAS LIBRES, HOJAS DENTADAS O ASERRADAS CON TRES A CINCO NERVIOS BASALES, PELUDAS");
+
+end
+
+rule "44"
+    when
+        $p : Planta(des==44)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");        
+        System.out.println("    >|-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+        System.out.println("        |-(41)ESTÍPULAS LIBRES, CORTEZA EN TIRAS LARGAS. HOJAS PENNI O PALMALOBULADAS, ASERRADAS");
+        System.out.println("        |-(42)SEMEJANTE PERO CON PELOS ESTRELLADOS");
+        System.out.println("        |-(43)ESTÍPULAS LIBRES, TALLOS Y HOJAS SUCULENTAS, BASE DE LA HOJA ASIMÉTRICA, MUCHAS COLOREADAS");
+        System.out.println("       >|-(44)ESTÍPULAS CILIADAS, HOJAS DE BORDE ASERRADO");
+        System.out.println("          >||=><<<FAMILIA>>>: Violaceae \n"); 
+        System.out.println("        |-(45)ESTÍPULAS BAJANTES AL PECÍOLO O EN GORRITO, RAÍCES ADVENTICIAS, OLOROSAS");
+        System.out.println("        |-(46)ESTIPULAS LIBRES, HOJAS DENTADAS O ASERRADAS CON TRES A CINCO NERVIOS BASALES, PELUDAS");
+
+end
+
+rule "45"
+    when
+        $p : Planta(des==45)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");        
+        System.out.println("    >|-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+        System.out.println("        |-(41)ESTÍPULAS LIBRES, CORTEZA EN TIRAS LARGAS. HOJAS PENNI O PALMALOBULADAS, ASERRADAS");
+        System.out.println("        |-(42)SEMEJANTE PERO CON PELOS ESTRELLADOS");
+        System.out.println("        |-(43)ESTÍPULAS LIBRES, TALLOS Y HOJAS SUCULENTAS, BASE DE LA HOJA ASIMÉTRICA, MUCHAS COLOREADAS");
+        System.out.println("        |-(44)ESTÍPULAS CILIADAS, HOJAS DE BORDE ASERRADO");
+        System.out.println("       >|-(45)ESTÍPULAS BAJANTES AL PECÍOLO O EN GORRITO, RAÍCES ADVENTICIAS, OLOROSAS");
+        System.out.println("          >||=><<<FAMILIA>>>: Araceae \n"); 
+        System.out.println("        |-(46)ESTIPULAS LIBRES, HOJAS DENTADAS O ASERRADAS CON TRES A CINCO NERVIOS BASALES, PELUDAS");
+
+end
+
+rule "46"
+    when
+        $p : Planta(des==46)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");        
+        System.out.println("    >|-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+        System.out.println("        |-(41)ESTÍPULAS LIBRES, CORTEZA EN TIRAS LARGAS. HOJAS PENNI O PALMALOBULADAS, ASERRADAS");
+        System.out.println("        |-(42)SEMEJANTE PERO CON PELOS ESTRELLADOS");
+        System.out.println("        |-(43)ESTÍPULAS LIBRES, TALLOS Y HOJAS SUCULENTAS, BASE DE LA HOJA ASIMÉTRICA, MUCHAS COLOREADAS");
+        System.out.println("        |-(44)ESTÍPULAS CILIADAS, HOJAS DE BORDE ASERRADO");
+        System.out.println("        |-(45)ESTÍPULAS BAJANTES AL PECÍOLO O EN GORRITO, RAÍCES ADVENTICIAS, OLOROSAS");
+        System.out.println("       >|-(46)ESTIPULAS LIBRES, HOJAS DENTADAS O ASERRADAS CON TRES A CINCO NERVIOS BASALES, PELUDAS");
+        System.out.println("          >||=><<<FAMILIA>>>: Urticaceae \n"); 
+
+end

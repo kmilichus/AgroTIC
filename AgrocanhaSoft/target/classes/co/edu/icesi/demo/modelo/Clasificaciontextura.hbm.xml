@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 18/05/2017 01:24:35 PM by Hibernate Tools 5.1.4.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="co.edu.icesi.demo.modelo.Clasificaciontextura" optimistic-lock="version" polymorphism="implicit" schema="public" select-before-update="false" table="clasificaciontextura">
+        <id name="clatexid" type="big_decimal">
+            <column name="clatexid" precision="20" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="nombrecla" optimistic-lock="true" type="string" unique="false">
+            <column length="30" name="nombrecla" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="caracterizacionlotes" optimistic-lock="true" sort="unsorted" table="caracterizacionlote">
+            <key on-delete="noaction">
+                <column name="clasificaciontextura_clatexid" precision="20" scale="0"/>
+            </key>
+            <one-to-many class="co.edu.icesi.demo.modelo.Caracterizacionlote" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

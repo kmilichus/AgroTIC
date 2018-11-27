@@ -1,0 +1,158 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>Consultar Diagnostico</title>
+	<meta name="content-type" content="text/html; charset=UTF-8" />
+
+</h:head>
+
+<h:body>
+	<ui:composition template="#{diagnosticoMB.URLMenu}">
+		<ui:define name="body">
+			<f:view>
+				<h:form>
+					<p:panel header="Modulo Consulta Diagnostico" id="moduloDatos">
+
+						<p:growl />
+
+						<h:panelGrid columns="2" border="0">
+
+							<p:outputLabel value="Terrenos Registrados" />
+
+							<p:selectOneMenu id="menuTerrenos"
+								binding="#{diagnosticoMB.menuTerrenos}">
+								<f:selectItem itemValue="-1" itemLabel="--SELECCIONE TERRENO--" />
+								<f:selectItems value="#{diagnosticoMB.itemsTerrenos}" />
+								<p:ajax listener="#{diagnosticoMB.cargarEstrategiasDelTerreno}"
+									update="moduloDatos,moduloAnalisisSuelo" />
+								<p:ajax listener="#{diagnosticoMB.cargarLotesDelTerreno}"
+									update="moduloDatos,moduloAnalisisSuelo" />
+							</p:selectOneMenu>
+
+							<p:outputLabel value="Estrategias del Terreno" />
+
+							<p:selectOneMenu id="menuEstrategias"
+								binding="#{diagnosticoMB.menuEstrategiasMuestreo}">
+								<f:selectItem itemValue="-1"
+									itemLabel="--SELECCIONE ESTRATEGIA O PLAN--" />
+								<f:selectItems value="#{diagnosticoMB.itemsEstrategiasMuestreo}" />
+								<p:ajax update="moduloDatos" />
+							</p:selectOneMenu>
+
+							<p:commandButton id="btnConsultarDiagnostico"
+								value="Consultar Diagnostico"
+								binding="#{diagnosticoMB.btnConsultarDiagnostico}"
+								update="moduloDatos,tablaCenicana,panelDiagnostico,moduloAnalisisSuelo"
+								action="#{diagnosticoMB.consultarDiagnosticoAgronomo}" />
+
+						</h:panelGrid>
+					</p:panel>
+
+					<p:panel header="Diagnostico Del Agrónomo" id="panelDiagnostico">
+
+						<p:growl />
+
+						<h:panelGrid columns="2" border="0">
+						
+						<p:outputLabel value="Agronomo Autor:" />
+
+							<p:inputText id="txtAgronomo"
+								binding="#{diagnosticoMB.txtAgronomo}" />
+						
+							<p:outputLabel value="Observaciones del Agronomo" />
+
+
+							<p:inputTextarea id="txtObservaciones" disabled="true"
+								binding="#{diagnosticoMB.txtObservaciones}" />
+
+
+							<p:outputLabel value="Fecha Registro" />
+
+							<p:inputText id="txtFechaRegistro" disabled="true"
+								placeholder="DD/MM/AAAA"
+								binding="#{diagnosticoMB.txtFechaRegistro}" />
+
+							<p:outputLabel value="Zona Agroecologica" />
+
+							<p:inputText id="txtZonaAgro" disabled="true"
+								binding="#{diagnosticoMB.txtZonaAgroecologica}" />
+
+						</h:panelGrid>
+					</p:panel>
+
+					<p:panel header="Reporte de Cenicaña" id="tablaCenicana">
+
+						<p:growl />
+
+						<p:dataTable var="caractActual" paginator="true" rows="5"
+							paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+							rowsPerPageTemplate="5,10,15"
+							value="#{diagnosticoMB.caracteristicasZonaAgro}">
+
+							<p:column headerText="Característica de la Zona">
+								<p:outputLabel value="#{caractActual.nombreCaract}" />
+							</p:column>
+
+							<p:column headerText="Descripción Zona Agroecologica">
+								<p:outputLabel value="#{caractActual.descripcionCaract}" />
+							</p:column>
+
+						</p:dataTable>
+
+					</p:panel>
+
+					<p:panel header="Caracterización del Terreno"
+						id="moduloAnalisisSuelo">
+
+						<p:growl />
+
+						<h:panelGrid columns="4" border="0">
+							<p:outputLabel value="Lotes del Terreno" />
+
+							<p:selectOneMenu id="menuLotes"
+								binding="#{diagnosticoMB.menuLotes}">
+								<f:selectItem itemValue="-1" itemLabel="--SELECCIONE LOTE" />
+								<f:selectItems value="#{diagnosticoMB.itemsLotes}" />
+								<p:ajax
+									listener="#{diagnosticoMB.generarReporteLaboratorioDelLote}"
+									update="moduloAnalisisSuelo" />
+							</p:selectOneMenu>
+
+							<p:outputLabel value="Número Puntos Recolección" />
+
+							<p:inputText id="txtCantidadPM" disabled="true"
+								binding="#{diagnosticoMB.txtCantidadPuntosRecoleccion}" />
+
+						</h:panelGrid>
+
+						<p:dataTable var="medidaAct" paginator="true" rows="5"
+							paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+							rowsPerPageTemplate="5,10,15"
+							value="#{diagnosticoMB.medidasLaboratorio}">
+
+							<p:column headerText="Nombre Dato">
+								<p:outputLabel value="#{medidaAct.nombreDato}" />
+							</p:column>
+
+							<p:column headerText="Valor Medido">
+								<p:outputLabel value="#{medidaAct.valorMedido}" />
+							</p:column>
+
+							<p:column headerText="Metodología Aplicada">
+								<p:outputLabel value="#{medidaAct.metodologiaAplicada}" />
+							</p:column>
+
+						</p:dataTable>
+
+					</p:panel>
+
+				</h:form>
+			</f:view>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

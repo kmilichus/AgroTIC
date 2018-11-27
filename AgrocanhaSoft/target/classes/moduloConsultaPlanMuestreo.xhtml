@@ -1,0 +1,122 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>Consulta Plan muestreo</title>
+	<meta name="content-type" content="text/html; charset=UTF-8" />
+</h:head>
+
+<h:body>
+	<ui:composition template="#{suelosMB.URLMenu}">
+		<ui:define name="body">
+			<f:view>
+				<h:form enctype="multipart/form-data">
+
+					<p:panel header="Modulo Consulta Plan de muestreo"
+						id="moduloConPlanMuestreo">
+
+						<p:growl />
+
+						<h:panelGrid columns="2" border="0">
+
+							<p:outputLabel value="Terreno:" />
+							<p:selectOneMenu id="ListaTerrenos"
+								binding="#{suelosMB.menuTerrenos}">
+								<f:selectItem itemValue="-1"
+									itemLabel="--SELECCIONE UN TERRENO--" />
+								<f:selectItems value="#{suelosMB.itemsTerrenos}"></f:selectItems>
+								<p:ajax update="moduloConPlanMuestreo"
+									listener="#{suelosMB.cargarLotesDelTerreno}" />
+								<p:ajax update="moduloConPlanMuestreo"
+									listener="#{suelosMB.cargarEstrategiasDelTerreno}" />
+
+							</p:selectOneMenu>
+
+							<p:outputLabel value="Código Plan de muestreo:" />
+							<p:selectOneMenu id="ListaCodigosPlan"
+								binding="#{suelosMB.menuEstrategiasMuestreo}">
+								<f:selectItem itemValue="-1"
+									itemLabel="--SELECCIONE UN CODIGO--" />
+								<f:selectItems value="#{suelosMB.itemsEstrategiasMuestreo}"></f:selectItems>
+							</p:selectOneMenu>
+
+							<p:outputLabel value="Lote:" />
+							<p:selectOneMenu id="ListaLotes" binding="#{suelosMB.menuLotes}">
+								<f:selectItem itemValue="-1" itemLabel="--SELECCIONE UN LOTE--" />
+								<f:selectItems value="#{suelosMB.itemsLotes}"></f:selectItems>
+							</p:selectOneMenu>
+
+						</h:panelGrid>
+
+						<p:commandButton disabled="false" id="btnConsultarPlanMuestreo"
+							value="Consultar Plan de muestreo"
+							update="moduloConPlanMuestreo
+				,pnlReportePlanMues"
+							action="#{suelosMB.consultarPlanMuestreoLote}"
+							binding="#{suelosMB.btnConsultarPlanMuestreo}" />
+
+					</p:panel>
+
+					<p:panel id="pnlReportePlanMues" header="Plan de muestreo">
+
+						<p:growl />
+						<h:panelGrid columns="1" border="0">
+
+							<h:panelGrid columns="2" border="0">
+
+								<p:outputLabel value="Número Puntos Recolección" />
+
+								<p:inputText id="txtCantidadPM" disabled="true"
+									binding="#{suelosMB.txtCantidadMuestrasRecolectadas}" />
+
+								<p:outputLabel value="Puntos:" />
+								<p:selectOneMenu id="Puntos-de-recolección"
+									binding="#{imagenMB.menuPuntos}">
+									<f:selectItem itemValue="-1"
+										itemLabel="--SELECCIONE UN PUNTO--" />
+									<f:selectItems value="#{imagenMB.itemMenuPuntos}">
+									</f:selectItems>
+									<p:ajax update="fotoGrafica"/>
+
+								</p:selectOneMenu>
+
+								<p:graphicImage id = "fotoGrafica" value="#{imagenMB.imagen}"/>
+
+							</h:panelGrid>
+
+
+							<h:panelGrid columns="2" border="0">
+
+								<p:dataTable var="dato" paginator="true" rows="5"
+									value="#{suelosMB.datosMuestreo}"
+									paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+									rowsPerPageTemplate="10,15,20">
+
+									<p:column headerText="Id">
+										<p:outputLabel value="#{dato.puntoid}" />
+									</p:column>
+
+									<p:column headerText="Altitud">
+										<p:outputLabel value="#{dato.altitud}" />
+									</p:column>
+
+									<p:column headerText="Longitud">
+										<p:outputLabel value="#{dato.latitud}" />
+									</p:column>
+
+								</p:dataTable>
+
+							</h:panelGrid>
+
+						</h:panelGrid>
+					</p:panel>
+
+				</h:form>
+			</f:view>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

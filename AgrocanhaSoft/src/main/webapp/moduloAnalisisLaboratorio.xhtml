@@ -1,0 +1,201 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>Modulo Analisis Laboratorio</title>
+	<meta name="content-type" content="text/html; charset=UTF-8" />
+
+</h:head>
+
+<h:body>
+	<ui:composition template="#{laboratorioMB.URLMenu}">
+		<ui:define name="body">
+			<f:view>
+
+				<h:form>
+
+					<p:panel header="Modulo Analisis Laboratorio"
+						id="moduloAnalisisLab">
+
+						<p:growl />
+
+						<h:panelGrid columns="2" border="0">
+
+							<p:outputLabel value="Nombre de la Hacienda" />
+
+							<p:inputText id="txtNombreHacienda"
+								placeholder="Digite el Nombre"
+								binding="#{laboratorioMB.txtNombreHacienda}" />
+
+							<p:outputLabel value="Nombre del Laboratorio" />
+
+							<p:inputText id="txtNombreLab" placeholder="Digite el Nombre"
+								binding="#{laboratorioMB.txtNombreLaboratorio}" />
+
+							<p:outputLabel value="Terrenos Registrados" />
+
+							<p:selectOneMenu id="listaTerreno"
+								binding="#{laboratorioMB.menuTerrenos}">
+								<f:selectItem itemValue="-1" itemLabel="--SELECCIONE TERRENO--" />
+								<f:selectItems value="#{laboratorioMB.itemsTerrenos}" />
+								<p:ajax listener="#{laboratorioMB.cargarLotesDelTerreno}" />
+								<p:ajax listener="#{laboratorioMB.cargarEstrategiasDelTerreno}"
+									update="moduloAnalisisLab" />
+							</p:selectOneMenu>
+
+							<p:outputLabel value="Estrategias Del Terreno" />
+
+							<p:selectOneMenu id="listaEstrategias"
+								binding="#{laboratorioMB.menuEstrategiasMuestreo}">
+								<f:selectItem itemValue="-1"
+									itemLabel="--SELECCIONE ESTRATEGIA--" />
+								<f:selectItems value="#{laboratorioMB.itemsEstrategiasMuestreo}" />
+							</p:selectOneMenu>
+
+							<p:outputLabel value="Lotes Del Terreno" />
+
+							<p:selectOneMenu id="listaLotes"
+								binding="#{laboratorioMB.menuLotes}">
+								<f:selectItem itemValue="-1" itemLabel="--SELECCIONE LOTE--" />
+								<f:selectItems value="#{laboratorioMB.itemsLotes}" />
+							</p:selectOneMenu>
+
+							<p:commandButton id="btnNombres"
+								binding="#{laboratorioMB.btnRegistrarNombres}"
+								value="Actualizar Laboratorio y Hacienda" update="moduloOtros"
+								action="#{laboratorioMB.registrarNombres}" />
+
+						</h:panelGrid>
+
+					</p:panel>
+
+
+					<p:panel header="Modulo Registro Medición" id="moduloMedicion">
+
+						<p:growl />
+
+						<h:panelGrid columns="2" border="0">
+
+							<p:outputLabel value="Lista de Metricas" />
+
+							<p:selectOneMenu id="listaMetricas"
+								binding="#{laboratorioMB.menuMetricas}">
+								<f:selectItem itemValue="-1" itemLabel="--SELECCIONE DATO--" />
+								<f:selectItems value="#{laboratorioMB.itemsMetricas}" />
+							</p:selectOneMenu>
+
+
+							<p:outputLabel value="Lista de Metodologías" />
+
+							<p:selectOneMenu id="listaMetodologias"
+								binding="#{laboratorioMB.menuMetodologiasMetrica}">
+								<f:selectItem itemValue="-1"
+									itemLabel="--SELECCIONE METODOLOGIA--" />
+								<f:selectItems value="#{laboratorioMB.itemsMetodologiasMetrica}" />
+							</p:selectOneMenu>
+
+							<p:outputLabel value="Magnitud / Medida" />
+
+							<p:inputText id="txtMagnitud"
+								placeholder="Valor (0.568 --> 56.8%)"
+								binding="#{laboratorioMB.txtMagnitudMetrica}" />
+
+							<p:commandButton id="btnRegistrarDato"
+								value="Registrar Dato Medición" update="moduloMedicion"
+								action="#{laboratorioMB.registrarMedicionMetrica}"
+								binding="#{laboratorioMB.btnRegistrarDatoMetrica}" />
+
+						</h:panelGrid>
+					</p:panel>
+
+					<h:panelGrid columns="2" border="0">
+
+						<p:panel header="Modulo Registro Medicion Elemento"
+							id="moduloElemento">
+
+							<p:growl />
+
+							<h:panelGrid columns="2" border="0">
+
+								<p:outputLabel value="Lista de Elementos" />
+
+								<p:selectOneMenu id="listaElementos"
+									binding="#{laboratorioMB.menuElementos}">
+									<f:selectItem itemValue="-1"
+										itemLabel="--SELECCIONE ELEMENTO--" />
+									<f:selectItems value="#{laboratorioMB.itemsElementos}" />
+								</p:selectOneMenu>
+
+
+								<p:outputLabel value="Lista de Metodologías" />
+
+								<p:selectOneMenu id="listaMetodologias2"
+									binding="#{laboratorioMB.menuMetodologiasElemento}">
+									<f:selectItem itemValue="-1"
+										itemLabel="--SELECCIONE METODOLOGIA--" />
+									<f:selectItems
+										value="#{laboratorioMB.itemsMetodologiasElemento}" />
+								</p:selectOneMenu>
+
+								<p:outputLabel value="Medida ppm" />
+
+								<p:inputText id="txtPPM" placeholder="Digite el Valor"
+									binding="#{laboratorioMB.txtPPM}" />
+
+								<p:outputLabel value="Porcentaje Solubilidad" />
+
+								<p:inputText id="txtSolubilidad" placeholder="0.568 --> 56.8%"
+									binding="#{laboratorioMB.txtPorcentajeSolubilidad}" />
+
+								<p:commandButton id="btnRegistrarValorElemento"
+									value="Registrar Dato Elemento" update="moduloElemento"
+									action="#{laboratorioMB.registrarMedicionElemento}"
+									binding="#{laboratorioMB.btnRegistrarDatoElemento}" />
+
+							</h:panelGrid>
+						</p:panel>
+
+						<p:panel header="Modulo Clasificaciones y Fases" id="moduloOtros">
+
+							<p:growl />
+
+							<h:panelGrid columns="2" border="0">
+
+								<p:outputLabel value="Fase Utilizada" />
+
+								<p:selectOneMenu id="listaFases"
+									binding="#{laboratorioMB.menuFases}">
+									<f:selectItem itemValue="-1"
+										itemLabel="--SELECCIONE FASE EMPLEADA" />
+									<f:selectItems value="#{laboratorioMB.itemsFases}" />
+								</p:selectOneMenu>
+
+								<p:outputLabel value="Clasificacion Textura" />
+
+								<p:selectOneMenu id="listaTextura"
+									binding="#{laboratorioMB.menuTiposTextura}">
+									<f:selectItem itemValue="-1"
+										itemLabel="--SELECCIONE TIPO TEXTURA--" />
+									<f:selectItems value="#{laboratorioMB.itemsTiposTextura}" />
+								</p:selectOneMenu>
+
+								<p:commandButton id="btnActualizarOtraInfo"
+									binding="#{laboratorioMB.btnRegistrarDatosRestantes}"
+									value="Actualizar Informe Laboratorio" update="moduloOtros"
+									action="#{laboratorioMB.registrarClasificaciones}" />
+
+							</h:panelGrid>
+						</p:panel>
+
+					</h:panelGrid>
+
+				</h:form>
+			</f:view>
+		</ui:define>
+	</ui:composition>
+
+</h:body>
+</html>

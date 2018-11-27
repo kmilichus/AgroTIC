@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>Administración De Terrenos</title>
+	<meta name="content-type" content="text/html; charset=UTF-8" />
+
+</h:head>
+
+<h:body>
+	<ui:composition template="#{suelosMB.URLMenu}">
+		<ui:define name="body">
+			<f:view>
+
+				<h:form>
+					<p:panel header="Modulo Terreno" id="moduloTerrenos">
+
+						<p:growl />
+
+						<h:panelGrid columns="2" border="0">
+
+							<p:outputLabel value="Nombre:" />
+							<p:inputText id="txtNameTerreno" placeholder="Nombre del terreno"
+								binding="#{suelosMB.txtNombreTerreno}" />
+
+							<p:outputLabel value="Terreno" />
+							<p:selectOneMenu id="ListaTerrenos"
+								binding="#{suelosMB.menuTerrenos}">
+								<f:selectItem itemValue="-1"
+									itemLabel="--SELECCIONE UN TERRENO--" />
+								<f:selectItems value="#{suelosMB.itemsTerrenos}"></f:selectItems>
+							</p:selectOneMenu>
+
+						</h:panelGrid>
+
+						<h:panelGrid columns="3" border="0">
+
+							<p:commandButton id="btnAgregarTerreno" value="Agregar terreno"
+								update="moduloTerrenos" action="#{suelosMB.registrarTerreno}"
+								binding="#{suelosMB.btnRegistrarTerreno}" />
+
+							<p:commandButton id="btnEliminarTerreno" value="Eliminar terreno"
+								update="moduloTerrenos" action="#{suelosMB.eliminarTerreno}"
+								binding="#{suelosMB.btnEliminarTerreno}" />
+
+							<p:commandButton id="btnActualizarTerreno"
+								value="Actualizar terreno" update="moduloTerrenos"
+								action="#{suelosMB.actualizarDatosTerreno}"
+								binding="#{suelosMB.btnModificarTerreno}" />
+
+						</h:panelGrid>
+
+					</p:panel>
+
+				</h:form>
+			</f:view>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

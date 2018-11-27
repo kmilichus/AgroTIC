@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 18/05/2017 01:24:35 PM by Hibernate Tools 5.1.4.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="co.edu.icesi.demo.modelo.Zonaagroecologica" optimistic-lock="version" polymorphism="implicit" schema="public" select-before-update="false" table="zonaagroecologica">
+        <id name="zonaagroid" type="string">
+            <column length="7" name="zonaagroid"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="co.edu.icesi.demo.modelo.Grupohomogeneosuelo" embed-xml="true" fetch="select" insert="true" name="grupohomogeneosuelo" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="grupohsueloid" precision="20" scale="0"/>
+        </many-to-one>
+        <many-to-one class="co.edu.icesi.demo.modelo.Grupohumedad" embed-xml="true" fetch="select" insert="true" name="grupohumedad" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="grupohumedadid" precision="20" scale="0"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="codigoznagro" optimistic-lock="true" type="string" unique="false">
+            <column length="7" name="codigoznagro" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="diagnosticoagronomos" optimistic-lock="true" sort="unsorted" table="diagnosticoagronomo">
+            <key on-delete="noaction">
+                <column length="7" name="zonaagroid"/>
+            </key>
+            <one-to-many class="co.edu.icesi.demo.modelo.Diagnosticoagronomo" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="zonaagroZonavariedads" optimistic-lock="true" sort="unsorted" table="zonaagro_zonavariedad">
+            <key on-delete="noaction">
+                <column length="7" name="zonaagroecologicaid"/>
+            </key>
+            <one-to-many class="co.edu.icesi.demo.modelo.ZonaagroZonavariedad" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="zonaagroecologicaIngenios" optimistic-lock="true" sort="unsorted" table="zonaagroecologica_ingenio">
+            <key on-delete="noaction">
+                <column length="7" name="zonaagroecologicaid"/>
+            </key>
+            <one-to-many class="co.edu.icesi.demo.modelo.ZonaagroecologicaIngenio" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

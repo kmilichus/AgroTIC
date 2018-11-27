@@ -1,0 +1,4861 @@
+//created on: 1/06/2015
+package com.expertobotanico.drools
+
+
+
+//list any import classes here.
+import com.expertobotanico.drools.model.*
+
+
+rule "0"
+    when
+        $p : Planta(des==0)               
+    then
+		System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+
+
+end
+
+rule "1"
+    when
+        $p : Planta(des==1)               
+    then
+  		System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("    >|-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("        |-(11)ASERRADAS, OLOROSAS, FLORES EN CABECITA");
+        System.out.println("        |-(12)ESTÍPULAS OLOR FRÍJOL");
+        System.out.println("        |-(13)ESTÍPULAS, OTRO OLOR");
+        System.out.println("        |-(14)HOJAS (FRONDES) CON SOROS (PIOJITOS)");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+      
+end
+
+rule "11"
+    when
+        $p : Planta(des==11)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("    >|-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("       >|-(11)ASERRADAS, OLOROSAS, FLORES EN CABECITA");
+        System.out.println("          >||=><<<FAMILIA>>>: Compositae \n");
+        System.out.println("        |-(12)ESTÍPULAS OLOR FRÍJOL");
+        System.out.println("        |-(13)ESTÍPULAS, OTRO OLOR");
+        System.out.println("        |-(14)HOJAS (FRONDES) CON SOROS (PIOJITOS)");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+      
+end
+
+rule "12"
+    when
+        $p : Planta(des==12)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("    >|-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("        |-(11)ASERRADAS, OLOROSAS, FLORES EN CABECITA");
+        System.out.println("       >|-(12)ESTÍPULAS OLOR FRÍJOL");
+        System.out.println("          >||=><<<FAMILIA>>>: Leguminosae \n");
+        System.out.println("        |-(13)ESTÍPULAS, OTRO OLOR");
+        System.out.println("        |-(14)HOJAS (FRONDES) CON SOROS (PIOJITOS)");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+     
+end
+
+rule "13"
+    when
+        $p : Planta(des==13)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("    >|-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("        |-(11)ASERRADAS, OLOROSAS, FLORES EN CABECITA");
+        System.out.println("        |-(12)ESTÍPULAS OLOR FRÍJOL");        
+        System.out.println("       >|-(13)ESTÍPULAS, OTRO OLOR");
+        System.out.println("          >||=><<<FAMILIA>>>: Rosaceae \n");
+        System.out.println("        |-(14)HOJAS (FRONDES) CON SOROS (PIOJITOS)");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+     
+end
+
+rule "14"
+    when
+        $p : Planta(des==14)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("    >|-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("        |-(11)ASERRADAS, OLOROSAS, FLORES EN CABECITA");
+        System.out.println("        |-(12)ESTÍPULAS OLOR FRÍJOL");        
+        System.out.println("        |-(13)ESTÍPULAS, OTRO OLOR");        
+        System.out.println("       >|-(14)HOJAS (FRONDES) CON SOROS (PIOJITOS)");
+        System.out.println("          >||=><<<FAMILIA>>>: Helechos \n");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+      
+end
+
+rule "2"
+    when
+        $p : Planta(des==2)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("    >|-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("        |-(21)ESTÍPULAS LIBRES, PELUDITAS");
+        System.out.println("        |-(22)ESTÍPULAS CONNADAS O TUBULARES");        
+        System.out.println("        |-(23)ESTÍPULAS LIBRES, EXUDADO BLANCO, FRUTO TRICOCO");        
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+      
+end
+
+rule "21"
+    when
+        $p : Planta(des==21)               
+    then
+    
+        System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("    >|-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("       >|-(21)ESTÍPULAS LIBRES, PELUDITAS");
+        System.out.println("          >||=><<<FAMILIA>>>: Lythraceae \n");
+        System.out.println("        |-(22)ESTÍPULAS CONNADAS O TUBULARES");        
+        System.out.println("        |-(23)ESTÍPULAS LIBRES, EXUDADO BLANCO, FRUTO TRICOCO");        
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+      
+
+end
+
+rule "22"
+    when
+        $p : Planta(des==22)               
+    then
+    
+        System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("    >|-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("        |-(21)ESTÍPULAS LIBRES, PELUDITAS"); 
+        System.out.println("       >|-(22)ESTÍPULAS CONNADAS O TUBULARES");
+        System.out.println("          >||=><<<FAMILIA>>>: Rubiaceae \n");        
+        System.out.println("        |-(23)ESTÍPULAS LIBRES, EXUDADO BLANCO, FRUTO TRICOCO");        
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+     
+
+end
+
+rule "23"
+    when
+        $p : Planta(des==23)               
+    then
+    
+        System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("    >|-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");
+        System.out.println("        |-(21)ESTÍPULAS LIBRES, PELUDITAS"); 
+        System.out.println("        |-(22)ESTÍPULAS CONNADAS O TUBULARES");  
+        System.out.println("       >|-(23)ESTÍPULAS LIBRES, EXUDADO BLANCO, FRUTO TRICOCO");  
+        System.out.println("          >||=><<<FAMILIA>>>: Euphorbiaceae \n");          
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+      
+
+end
+
+
+rule "3"
+    when
+        $p : Planta(des==3)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("        |-(31)TALLITOS CUADRADOS O REDONDEADOS, BRÁCTEAS FLORALES");
+        System.out.println("        |-(32)SEMEJANTE PERO SIN BRÁCTEAS, PELOS GRANDULÍFEROS");
+        System.out.println("        |-(33)HOJAS ASERRADAS, AROMÁTICAS, FLOR EN PARAGÜITAS SOBRE CABECITAS");
+        System.out.println("        |-(34)SIMILAR A LA ANTERIOR PERO FLORES EN FORMA DE LABIOS O TROMPETILLAS");
+        System.out.println("        |-(35)PARECIDA A LAS ANTERIORES PERO LA MAYORÍA INODORAS");
+        System.out.println("        |-(36)HOJAS PINTADAS DE ROJO O VIOLETA O TODAS COLOREADAS POR EL ENVÉS, FLORES TUBULARES ROJIZAS O AMARILLAS");
+        System.out.println("        |-(37)HOJAS CURVINERVIAS, TALLOS CUADRADOS O REDONDOS, MUCHAS PELUDITAS");
+        System.out.println("        |-(38)NUDOS ENGROSADOS, A VECES COLOREADOS, ENTERAS, NERVIOS POCO MARCADOS");
+        System.out.println("        |-(39)HOJAS OPUESTAS O VERTICILADAS, CON TALLOS Y HOJAS CARNOSOS, FLOR EN CHURRUSCO");
+        System.out.println("        |-(310)HOJAS OPUESTAS O VERTICILADAS, RAÍZ CON OLOR A MENTOL");           
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+       
+end
+
+rule "31"
+    when
+        $p : Planta(des==31)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("       >|-(31)TALLITOS CUADRADOS O REDONDEADOS, BRÁCTEAS FLORALES");
+        System.out.println("          >||=><<<FAMILIA>>>: Acanthacea \n"); 
+        System.out.println("        |-(32)SEMEJANTE PERO SIN BRÁCTEAS, PELOS GRANDULÍFEROS");
+        System.out.println("        |-(33)HOJAS ASERRADAS, AROMÁTICAS, FLOR EN PARAGÜITAS SOBRE CABECITAS");
+        System.out.println("        |-(34)SIMILAR A LA ANTERIOR PERO FLORES EN FORMA DE LABIOS O TROMPETILLAS");
+        System.out.println("        |-(35)PARECIDA A LAS ANTERIORES PERO LA MAYORÍA INODORAS");
+        System.out.println("        |-(36)HOJAS PINTADAS DE ROJO O VIOLETA O TODAS COLOREADAS POR EL ENVÉS, FLORES TUBULARES ROJIZAS O AMARILLAS");
+        System.out.println("        |-(37)HOJAS CURVINERVIAS, TALLOS CUADRADOS O REDONDOS, MUCHAS PELUDITAS");
+        System.out.println("        |-(38)NUDOS ENGROSADOS, A VECES COLOREADOS, ENTERAS, NERVIOS POCO MARCADOS");
+        System.out.println("        |-(39)HOJAS OPUESTAS O VERTICILADAS, CON TALLOS Y HOJAS CARNOSOS, FLOR EN CHURRUSCO");
+        System.out.println("        |-(310)HOJAS OPUESTAS O VERTICILADAS, RAÍZ CON OLOR A MENTOL");           
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+
+end
+
+rule "32"
+    when
+        $p : Planta(des==32)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("        |-(31)TALLITOS CUADRADOS O REDONDEADOS, BRÁCTEAS FLORALES");
+        System.out.println("       >|-(32)SEMEJANTE PERO SIN BRÁCTEAS, PELOS GRANDULÍFEROS");
+        System.out.println("          >||=><<<FAMILIA>>>: Lythracea \n"); 
+        System.out.println("        |-(33)HOJAS ASERRADAS, AROMÁTICAS, FLOR EN PARAGÜITAS SOBRE CABECITAS");
+        System.out.println("        |-(34)SIMILAR A LA ANTERIOR PERO FLORES EN FORMA DE LABIOS O TROMPETILLAS");
+        System.out.println("        |-(35)PARECIDA A LAS ANTERIORES PERO LA MAYORÍA INODORAS");
+        System.out.println("        |-(36)HOJAS PINTADAS DE ROJO O VIOLETA O TODAS COLOREADAS POR EL ENVÉS, FLORES TUBULARES ROJIZAS O AMARILLAS");
+        System.out.println("        |-(37)HOJAS CURVINERVIAS, TALLOS CUADRADOS O REDONDOS, MUCHAS PELUDITAS");
+        System.out.println("        |-(38)NUDOS ENGROSADOS, A VECES COLOREADOS, ENTERAS, NERVIOS POCO MARCADOS");
+        System.out.println("        |-(39)HOJAS OPUESTAS O VERTICILADAS, CON TALLOS Y HOJAS CARNOSOS, FLOR EN CHURRUSCO");
+        System.out.println("        |-(310)HOJAS OPUESTAS O VERTICILADAS, RAÍZ CON OLOR A MENTOL");           
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+
+end
+rule "33"
+    when
+        $p : Planta(des==33)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("        |-(31)TALLITOS CUADRADOS O REDONDEADOS, BRÁCTEAS FLORALES");
+        System.out.println("        |-(32)SEMEJANTE PERO SIN BRÁCTEAS, PELOS GRANDULÍFEROS");
+        System.out.println("       >|-(33)HOJAS ASERRADAS, AROMÁTICAS, FLOR EN PARAGÜITAS SOBRE CABECITAS");
+        System.out.println("          >||=><<<FAMILIA>>>: Compositae \n"); 
+        System.out.println("        |-(34)SIMILAR A LA ANTERIOR PERO FLORES EN FORMA DE LABIOS O TROMPETILLAS");
+        System.out.println("        |-(35)PARECIDA A LAS ANTERIORES PERO LA MAYORÍA INODORAS");
+        System.out.println("        |-(36)HOJAS PINTADAS DE ROJO O VIOLETA O TODAS COLOREADAS POR EL ENVÉS, FLORES TUBULARES ROJIZAS O AMARILLAS");
+        System.out.println("        |-(37)HOJAS CURVINERVIAS, TALLOS CUADRADOS O REDONDOS, MUCHAS PELUDITAS");
+        System.out.println("        |-(38)NUDOS ENGROSADOS, A VECES COLOREADOS, ENTERAS, NERVIOS POCO MARCADOS");
+        System.out.println("        |-(39)HOJAS OPUESTAS O VERTICILADAS, CON TALLOS Y HOJAS CARNOSOS, FLOR EN CHURRUSCO");
+        System.out.println("        |-(310)HOJAS OPUESTAS O VERTICILADAS, RAÍZ CON OLOR A MENTOL");           
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+
+end
+rule "34"
+    when
+        $p : Planta(des==34)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("        |-(31)TALLITOS CUADRADOS O REDONDEADOS, BRÁCTEAS FLORALES");
+        System.out.println("        |-(32)SEMEJANTE PERO SIN BRÁCTEAS, PELOS GRANDULÍFEROS");
+        System.out.println("        |-(33)HOJAS ASERRADAS, AROMÁTICAS, FLOR EN PARAGÜITAS SOBRE CABECITAS");
+        System.out.println("       >|-(34)SIMILAR A LA ANTERIOR PERO FLORES EN FORMA DE LABIOS O TROMPETILLAS");
+        System.out.println("          >||=><<<FAMILIA>>>: Lamiaceae o Verbenacea \n"); 
+        System.out.println("        |-(35)PARECIDA A LAS ANTERIORES PERO LA MAYORÍA INODORAS");
+        System.out.println("        |-(36)HOJAS PINTADAS DE ROJO O VIOLETA O TODAS COLOREADAS POR EL ENVÉS, FLORES TUBULARES ROJIZAS O AMARILLAS");
+        System.out.println("        |-(37)HOJAS CURVINERVIAS, TALLOS CUADRADOS O REDONDOS, MUCHAS PELUDITAS");
+        System.out.println("        |-(38)NUDOS ENGROSADOS, A VECES COLOREADOS, ENTERAS, NERVIOS POCO MARCADOS");
+        System.out.println("        |-(39)HOJAS OPUESTAS O VERTICILADAS, CON TALLOS Y HOJAS CARNOSOS, FLOR EN CHURRUSCO");
+        System.out.println("        |-(310)HOJAS OPUESTAS O VERTICILADAS, RAÍZ CON OLOR A MENTOL");           
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+
+end
+rule "35"
+    when
+        $p : Planta(des==35)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("        |-(31)TALLITOS CUADRADOS O REDONDEADOS, BRÁCTEAS FLORALES");
+        System.out.println("        |-(32)SEMEJANTE PERO SIN BRÁCTEAS, PELOS GRANDULÍFEROS");
+        System.out.println("        |-(33)HOJAS ASERRADAS, AROMÁTICAS, FLOR EN PARAGÜITAS SOBRE CABECITAS");
+        System.out.println("        |-(34)SIMILAR A LA ANTERIOR PERO FLORES EN FORMA DE LABIOS O TROMPETILLAS");
+        System.out.println("       >|-(35)PARECIDA A LAS ANTERIORES PERO LA MAYORÍA INODORAS");
+        System.out.println("          >||=><<<FAMILIA>>>: Scrophulariaceae \n"); 
+        System.out.println("        |-(36)HOJAS PINTADAS DE ROJO O VIOLETA O TODAS COLOREADAS POR EL ENVÉS, FLORES TUBULARES ROJIZAS O AMARILLAS");
+        System.out.println("        |-(37)HOJAS CURVINERVIAS, TALLOS CUADRADOS O REDONDOS, MUCHAS PELUDITAS");
+        System.out.println("        |-(38)NUDOS ENGROSADOS, A VECES COLOREADOS, ENTERAS, NERVIOS POCO MARCADOS");
+        System.out.println("        |-(39)HOJAS OPUESTAS O VERTICILADAS, CON TALLOS Y HOJAS CARNOSOS, FLOR EN CHURRUSCO");
+        System.out.println("        |-(310)HOJAS OPUESTAS O VERTICILADAS, RAÍZ CON OLOR A MENTOL");           
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+
+end
+rule "36"
+    when
+        $p : Planta(des==36)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("        |-(31)TALLITOS CUADRADOS O REDONDEADOS, BRÁCTEAS FLORALES");
+        System.out.println("        |-(32)SEMEJANTE PERO SIN BRÁCTEAS, PELOS GRANDULÍFEROS");
+        System.out.println("        |-(33)HOJAS ASERRADAS, AROMÁTICAS, FLOR EN PARAGÜITAS SOBRE CABECITAS");
+        System.out.println("        |-(34)SIMILAR A LA ANTERIOR PERO FLORES EN FORMA DE LABIOS O TROMPETILLAS");
+        System.out.println("        |-(35)PARECIDA A LAS ANTERIORES PERO LA MAYORÍA INODORAS");
+        System.out.println("       >|-(36)HOJAS PINTADAS DE ROJO O VIOLETA O TODAS COLOREADAS POR EL ENVÉS, FLORES TUBULARES ROJIZAS O AMARILLAS");
+        System.out.println("          >||=><<<FAMILIA>>>: Genseriaceae \n"); 
+        System.out.println("        |-(37)HOJAS CURVINERVIAS, TALLOS CUADRADOS O REDONDOS, MUCHAS PELUDITAS");
+        System.out.println("        |-(38)NUDOS ENGROSADOS, A VECES COLOREADOS, ENTERAS, NERVIOS POCO MARCADOS");
+        System.out.println("        |-(39)HOJAS OPUESTAS O VERTICILADAS, CON TALLOS Y HOJAS CARNOSOS, FLOR EN CHURRUSCO");
+        System.out.println("        |-(310)HOJAS OPUESTAS O VERTICILADAS, RAÍZ CON OLOR A MENTOL");           
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+
+end
+rule "37"
+    when
+        $p : Planta(des==37)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("        |-(31)TALLITOS CUADRADOS O REDONDEADOS, BRÁCTEAS FLORALES");
+        System.out.println("        |-(32)SEMEJANTE PERO SIN BRÁCTEAS, PELOS GRANDULÍFEROS");
+        System.out.println("        |-(33)HOJAS ASERRADAS, AROMÁTICAS, FLOR EN PARAGÜITAS SOBRE CABECITAS");
+        System.out.println("        |-(34)SIMILAR A LA ANTERIOR PERO FLORES EN FORMA DE LABIOS O TROMPETILLAS");
+        System.out.println("        |-(35)PARECIDA A LAS ANTERIORES PERO LA MAYORÍA INODORAS");
+        System.out.println("        |-(36)HOJAS PINTADAS DE ROJO O VIOLETA O TODAS COLOREADAS POR EL ENVÉS, FLORES TUBULARES ROJIZAS O AMARILLAS");
+        System.out.println("       >|-(37)HOJAS CURVINERVIAS, TALLOS CUADRADOS O REDONDOS, MUCHAS PELUDITAS");
+        System.out.println("          >||=><<<FAMILIA>>>: Melastomataceae \n"); 
+        System.out.println("        |-(38)NUDOS ENGROSADOS, A VECES COLOREADOS, ENTERAS, NERVIOS POCO MARCADOS");
+        System.out.println("        |-(39)HOJAS OPUESTAS O VERTICILADAS, CON TALLOS Y HOJAS CARNOSOS, FLOR EN CHURRUSCO");
+        System.out.println("        |-(310)HOJAS OPUESTAS O VERTICILADAS, RAÍZ CON OLOR A MENTOL");           
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+
+end
+rule "38"
+    when
+        $p : Planta(des==38)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("        |-(31)TALLITOS CUADRADOS O REDONDEADOS, BRÁCTEAS FLORALES");
+        System.out.println("        |-(32)SEMEJANTE PERO SIN BRÁCTEAS, PELOS GRANDULÍFEROS");
+        System.out.println("        |-(33)HOJAS ASERRADAS, AROMÁTICAS, FLOR EN PARAGÜITAS SOBRE CABECITAS");
+        System.out.println("        |-(34)SIMILAR A LA ANTERIOR PERO FLORES EN FORMA DE LABIOS O TROMPETILLAS");
+        System.out.println("        |-(35)PARECIDA A LAS ANTERIORES PERO LA MAYORÍA INODORAS");
+        System.out.println("        |-(36)HOJAS PINTADAS DE ROJO O VIOLETA O TODAS COLOREADAS POR EL ENVÉS, FLORES TUBULARES ROJIZAS O AMARILLAS");
+        System.out.println("        |-(37)HOJAS CURVINERVIAS, TALLOS CUADRADOS O REDONDOS, MUCHAS PELUDITAS");
+        System.out.println("       >|-(38)NUDOS ENGROSADOS, A VECES COLOREADOS, ENTERAS, NERVIOS POCO MARCADOS");
+        System.out.println("          >||=><<<FAMILIA>>>: Nyctaginacea \n"); 
+        System.out.println("        |-(39)HOJAS OPUESTAS O VERTICILADAS, CON TALLOS Y HOJAS CARNOSOS, FLOR EN CHURRUSCO");
+        System.out.println("        |-(310)HOJAS OPUESTAS O VERTICILADAS, RAÍZ CON OLOR A MENTOL");           
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+
+end
+rule "39"
+    when
+        $p : Planta(des==39)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("        |-(31)TALLITOS CUADRADOS O REDONDEADOS, BRÁCTEAS FLORALES");
+        System.out.println("        |-(32)SEMEJANTE PERO SIN BRÁCTEAS, PELOS GRANDULÍFEROS");
+        System.out.println("        |-(33)HOJAS ASERRADAS, AROMÁTICAS, FLOR EN PARAGÜITAS SOBRE CABECITAS");
+        System.out.println("        |-(34)SIMILAR A LA ANTERIOR PERO FLORES EN FORMA DE LABIOS O TROMPETILLAS");
+        System.out.println("        |-(35)PARECIDA A LAS ANTERIORES PERO LA MAYORÍA INODORAS");
+        System.out.println("        |-(36)HOJAS PINTADAS DE ROJO O VIOLETA O TODAS COLOREADAS POR EL ENVÉS, FLORES TUBULARES ROJIZAS O AMARILLAS");
+        System.out.println("        |-(37)HOJAS CURVINERVIAS, TALLOS CUADRADOS O REDONDOS, MUCHAS PELUDITAS");
+        System.out.println("        |-(38)NUDOS ENGROSADOS, A VECES COLOREADOS, ENTERAS, NERVIOS POCO MARCADOS");
+        System.out.println("       >|-(39)HOJAS OPUESTAS O VERTICILADAS, CON TALLOS Y HOJAS CARNOSOS, FLOR EN CHURRUSCO");
+        System.out.println("          >||=><<<FAMILIA>>>: Piperaceae \n"); 
+        System.out.println("        |-(310)HOJAS OPUESTAS O VERTICILADAS, RAÍZ CON OLOR A MENTOL");           
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+
+end
+rule "310"
+    when
+        $p : Planta(des==310)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");
+        System.out.println("        |-(31)TALLITOS CUADRADOS O REDONDEADOS, BRÁCTEAS FLORALES");
+        System.out.println("        |-(32)SEMEJANTE PERO SIN BRÁCTEAS, PELOS GRANDULÍFEROS");
+        System.out.println("        |-(33)HOJAS ASERRADAS, AROMÁTICAS, FLOR EN PARAGÜITAS SOBRE CABECITAS");
+        System.out.println("        |-(34)SIMILAR A LA ANTERIOR PERO FLORES EN FORMA DE LABIOS O TROMPETILLAS");
+        System.out.println("        |-(35)PARECIDA A LAS ANTERIORES PERO LA MAYORÍA INODORAS");
+        System.out.println("        |-(36)HOJAS PINTADAS DE ROJO O VIOLETA O TODAS COLOREADAS POR EL ENVÉS, FLORES TUBULARES ROJIZAS O AMARILLAS");
+        System.out.println("        |-(37)HOJAS CURVINERVIAS, TALLOS CUADRADOS O REDONDOS, MUCHAS PELUDITAS");
+        System.out.println("        |-(38)NUDOS ENGROSADOS, A VECES COLOREADOS, ENTERAS, NERVIOS POCO MARCADOS");
+        System.out.println("        |-(39)HOJAS OPUESTAS O VERTICILADAS, CON TALLOS Y HOJAS CARNOSOS, FLOR EN CHURRUSCO");
+        System.out.println("       >|-(310)HOJAS OPUESTAS O VERTICILADAS, RAÍZ CON OLOR A MENTOL");
+        System.out.println("          >| |=><<<FAMILIA>>>: Polygalaceae \n");         
+        System.out.println("     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+
+end
+
+rule "4"
+    when
+        $p : Planta(des==4)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");        
+        System.out.println("    >|-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+        System.out.println("        |-(41)ESTÍPULAS LIBRES, CORTEZA EN TIRAS LARGAS. HOJAS PENNI O PALMALOBULADAS, ASERRADAS");
+        System.out.println("        |-(42)SEMEJANTE PERO CON PELOS ESTRELLADOS");
+        System.out.println("        |-(43)ESTÍPULAS LIBRES, TALLOS Y HOJAS SUCULENTAS, BASE DE LA HOJA ASIMÉTRICA, MUCHAS COLOREADAS");
+        System.out.println("        |-(44)ESTÍPULAS CILIADAS, HOJAS DE BORDE ASERRADO");
+        System.out.println("        |-(45)ESTÍPULAS BAJANTES AL PECÍOLO O EN GORRITO, RAÍCES ADVENTICIAS, OLOROSAS");
+        System.out.println("        |-(46)ESTIPULAS LIBRES, HOJAS DENTADAS O ASERRADAS CON TRES A CINCO NERVIOS BASALES, PELUDAS");
+
+end
+
+
+
+rule "41"
+    when
+        $p : Planta(des==41)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");        
+        System.out.println("    >|-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+        System.out.println("       >|-(41)ESTÍPULAS LIBRES, CORTEZA EN TIRAS LARGAS. HOJAS PENNI O PALMALOBULADAS, ASERRADAS");
+        System.out.println("          >||=><<<FAMILIA>>>: Tiliaceae \n"); 
+        System.out.println("        |-(42)SEMEJANTE PERO CON PELOS ESTRELLADOS");
+        System.out.println("        |-(43)ESTÍPULAS LIBRES, TALLOS Y HOJAS SUCULENTAS, BASE DE LA HOJA ASIMÉTRICA, MUCHAS COLOREADAS");
+        System.out.println("        |-(44)ESTÍPULAS CILIADAS, HOJAS DE BORDE ASERRADO");
+        System.out.println("        |-(45)ESTÍPULAS BAJANTES AL PECÍOLO O EN GORRITO, RAÍCES ADVENTICIAS, OLOROSAS");
+        System.out.println("        |-(46)ESTIPULAS LIBRES, HOJAS DENTADAS O ASERRADAS CON TRES A CINCO NERVIOS BASALES, PELUDAS");
+
+end
+
+rule "42"
+    when
+        $p : Planta(des==42)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");        
+        System.out.println("    >|-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+        System.out.println("        |-(41)ESTÍPULAS LIBRES, CORTEZA EN TIRAS LARGAS. HOJAS PENNI O PALMALOBULADAS, ASERRADAS");
+        System.out.println("       >|-(42)SEMEJANTE PERO CON PELOS ESTRELLADOS");
+        System.out.println("          >||=><<<FAMILIA>>>: Malvaceae \n"); 
+        System.out.println("        |-(43)ESTÍPULAS LIBRES, TALLOS Y HOJAS SUCULENTAS, BASE DE LA HOJA ASIMÉTRICA, MUCHAS COLOREADAS");
+        System.out.println("        |-(44)ESTÍPULAS CILIADAS, HOJAS DE BORDE ASERRADO");
+        System.out.println("        |-(45)ESTÍPULAS BAJANTES AL PECÍOLO O EN GORRITO, RAÍCES ADVENTICIAS, OLOROSAS");
+        System.out.println("        |-(46)ESTIPULAS LIBRES, HOJAS DENTADAS O ASERRADAS CON TRES A CINCO NERVIOS BASALES, PELUDAS");
+
+end
+
+rule "43"
+    when
+        $p : Planta(des==43)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");        
+        System.out.println("    >|-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+        System.out.println("        |-(41)ESTÍPULAS LIBRES, CORTEZA EN TIRAS LARGAS. HOJAS PENNI O PALMALOBULADAS, ASERRADAS");
+        System.out.println("        |-(42)SEMEJANTE PERO CON PELOS ESTRELLADOS");
+        System.out.println("       >|-(43)ESTÍPULAS LIBRES, TALLOS Y HOJAS SUCULENTAS, BASE DE LA HOJA ASIMÉTRICA, MUCHAS COLOREADAS");
+        System.out.println("          >||=><<<FAMILIA>>>: Begoniaceae \n"); 
+        System.out.println("        |-(44)ESTÍPULAS CILIADAS, HOJAS DE BORDE ASERRADO");
+        System.out.println("        |-(45)ESTÍPULAS BAJANTES AL PECÍOLO O EN GORRITO, RAÍCES ADVENTICIAS, OLOROSAS");
+        System.out.println("        |-(46)ESTIPULAS LIBRES, HOJAS DENTADAS O ASERRADAS CON TRES A CINCO NERVIOS BASALES, PELUDAS");
+
+end
+
+rule "44"
+    when
+        $p : Planta(des==44)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");        
+        System.out.println("    >|-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+        System.out.println("        |-(41)ESTÍPULAS LIBRES, CORTEZA EN TIRAS LARGAS. HOJAS PENNI O PALMALOBULADAS, ASERRADAS");
+        System.out.println("        |-(42)SEMEJANTE PERO CON PELOS ESTRELLADOS");
+        System.out.println("        |-(43)ESTÍPULAS LIBRES, TALLOS Y HOJAS SUCULENTAS, BASE DE LA HOJA ASIMÉTRICA, MUCHAS COLOREADAS");
+        System.out.println("       >|-(44)ESTÍPULAS CILIADAS, HOJAS DE BORDE ASERRADO");
+        System.out.println("          >||=><<<FAMILIA>>>: Violaceae \n"); 
+        System.out.println("        |-(45)ESTÍPULAS BAJANTES AL PECÍOLO O EN GORRITO, RAÍCES ADVENTICIAS, OLOROSAS");
+        System.out.println("        |-(46)ESTIPULAS LIBRES, HOJAS DENTADAS O ASERRADAS CON TRES A CINCO NERVIOS BASALES, PELUDAS");
+
+end
+
+rule "45"
+    when
+        $p : Planta(des==45)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");        
+        System.out.println("    >|-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+        System.out.println("        |-(41)ESTÍPULAS LIBRES, CORTEZA EN TIRAS LARGAS. HOJAS PENNI O PALMALOBULADAS, ASERRADAS");
+        System.out.println("        |-(42)SEMEJANTE PERO CON PELOS ESTRELLADOS");
+        System.out.println("        |-(43)ESTÍPULAS LIBRES, TALLOS Y HOJAS SUCULENTAS, BASE DE LA HOJA ASIMÉTRICA, MUCHAS COLOREADAS");
+        System.out.println("        |-(44)ESTÍPULAS CILIADAS, HOJAS DE BORDE ASERRADO");
+        System.out.println("       >|-(45)ESTÍPULAS BAJANTES AL PECÍOLO O EN GORRITO, RAÍCES ADVENTICIAS, OLOROSAS");
+        System.out.println("          >||=><<<FAMILIA>>>: Araceae \n"); 
+        System.out.println("        |-(46)ESTIPULAS LIBRES, HOJAS DENTADAS O ASERRADAS CON TRES A CINCO NERVIOS BASALES, PELUDAS");
+
+end
+
+rule "46"
+    when
+        $p : Planta(des==46)               
+    then
+    	System.out.println("\n\n\n");
+        System.out.println("==> (0)HERBÁCEAS");
+        System.out.println("     |-(1) HOJAS COMPUESTAS, ALTERNAS");
+        System.out.println("     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS");    
+        System.out.println("     |-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS");        
+        System.out.println("    >|-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS");
+        System.out.println("        |-(41)ESTÍPULAS LIBRES, CORTEZA EN TIRAS LARGAS. HOJAS PENNI O PALMALOBULADAS, ASERRADAS");
+        System.out.println("        |-(42)SEMEJANTE PERO CON PELOS ESTRELLADOS");
+        System.out.println("        |-(43)ESTÍPULAS LIBRES, TALLOS Y HOJAS SUCULENTAS, BASE DE LA HOJA ASIMÉTRICA, MUCHAS COLOREADAS");
+        System.out.println("        |-(44)ESTÍPULAS CILIADAS, HOJAS DE BORDE ASERRADO");
+        System.out.println("        |-(45)ESTÍPULAS BAJANTES AL PECÍOLO O EN GORRITO, RAÍCES ADVENTICIAS, OLOROSAS");
+        System.out.println("       >|-(46)ESTIPULAS LIBRES, HOJAS DENTADAS O ASERRADAS CON TRES A CINCO NERVIOS BASALES, PELUDAS");
+        System.out.println("          >||=><<<FAMILIA>>>: Urticaceae \n"); 
+
+end
+
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 143
+when
+	des==143
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 144
+when
+	des==144
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 145
+when
+	des==145
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 146
+when
+	des==146
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 147
+when
+	des==147
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 148
+when
+	des==148
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 149
+when
+	des==149
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 150
+when
+	des==150
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 151
+when
+	des==151
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 152
+when
+	des==152
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 153
+when
+	des==153
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 154
+when
+	des==154
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 155
+when
+	des==155
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 156
+when
+	des==156
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 157
+when
+	des==157
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 158
+when
+	des==158
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 159
+when
+	des==159
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 160
+when
+	des==160
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 161
+when
+	des==161
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 162
+when
+	des==162
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 163
+when
+	des==163
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 164
+when
+	des==164
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 165
+when
+	des==165
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 166
+when
+	des==166
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 167
+when
+	des==167
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 168
+when
+	des==168
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 169
+when
+	des==169
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 170
+when
+	des==170
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 171
+when
+	des==171
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 172
+when
+	des==172
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 173
+when
+	des==173
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 174
+when
+	des==174
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 175
+when
+	des==175
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 176
+when
+	des==176
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 177
+when
+	des==177
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 178
+when
+	des==178
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 179
+when
+	des==179
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 180
+when
+	des==180
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 181
+when
+	des==181
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 182
+when
+	des==182
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 183
+when
+	des==183
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 184
+when
+	des==184
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 185
+when
+	des==185
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 186
+when
+	des==186
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 187
+when
+	des==187
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 188
+when
+	des==188
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 189
+when
+	des==189
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 190
+when
+	des==190
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 191
+when
+	des==191
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 192
+when
+	des==192
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 193
+when
+	des==193
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 194
+when
+	des==194
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 195
+when
+	des==195
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 196
+when
+	des==196
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 197
+when
+	des==197
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 198
+when
+	des==198
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 199
+when
+	des==199
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 200
+when
+	des==200
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 201
+when
+	des==201
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 202
+when
+	des==202
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 203
+when
+	des==203
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 204
+when
+	des==204
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 205
+when
+	des==205
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 206
+when
+	des==206
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 207
+when
+	des==207
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 208
+when
+	des==208
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 209
+when
+	des==209
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 210
+when
+	des==210
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 211
+when
+	des==211
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 212
+when
+	des==212
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 213
+when
+	des==213
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 214
+when
+	des==214
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 215
+when
+	des==215
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 216
+when
+	des==216
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 217
+when
+	des==217
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 218
+when
+	des==218
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 219
+when
+	des==219
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 220
+when
+	des==220
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 221
+when
+	des==221
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 222
+when
+	des==222
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 223
+when
+	des==223
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 224
+when
+	des==224
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 225
+when
+	des==225
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 226
+when
+	des==226
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 227
+when
+	des==227
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 228
+when
+	des==228
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 229
+when
+	des==229
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 230
+when
+	des==230
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 231
+when
+	des==231
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 232
+when
+	des==232
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 233
+when
+	des==233
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 234
+when
+	des==234
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 235
+when
+	des==235
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 236
+when
+	des==236
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 237
+when
+	des==237
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 238
+when
+	des==238
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 239
+when
+	des==239
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 240
+when
+	des==240
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 241
+when
+	des==241
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 242
+when
+	des==242
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 243
+when
+	des==243
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 244
+when
+	des==244
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 245
+when
+	des==245
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 246
+when
+	des==246
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 247
+when
+	des==247
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 248
+when
+	des==248
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 249
+when
+	des==249
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 250
+when
+	des==250
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 251
+when
+	des==251
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 252
+when
+	des==252
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 253
+when
+	des==253
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 254
+when
+	des==254
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 255
+when
+	des==255
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 256
+when
+	des==256
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 257
+when
+	des==257
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 258
+when
+	des==258
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 259
+when
+	des==259
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 260
+when
+	des==260
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 261
+when
+	des==261
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 262
+when
+	des==262
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 263
+when
+	des==263
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 264
+when
+	des==264
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 265
+when
+	des==265
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 266
+when
+	des==266
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 267
+when
+	des==267
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 268
+when
+	des==268
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 269
+when
+	des==269
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 270
+when
+	des==270
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 271
+when
+	des==271
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 272
+when
+	des==272
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 273
+when
+	des==273
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 274
+when
+	des==274
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 275
+when
+	des==275
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 276
+when
+	des==276
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 277
+when
+	des==277
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 278
+when
+	des==278
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 279
+when
+	des==279
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 280
+when
+	des==280
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 281
+when
+	des==281
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 282
+when
+	des==282
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 283
+when
+	des==283
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 284
+when
+	des==284
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 285
+when
+	des==285
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 286
+when
+	des==286
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 287
+when
+	des==287
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 288
+when
+	des==288
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 289
+when
+	des==289
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 290
+when
+	des==290
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 291
+when
+	des==291
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 292
+when
+	des==292
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 293
+when
+	des==293
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 294
+when
+	des==294
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 295
+when
+	des==295
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 296
+when
+	des==296
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 297
+when
+	des==297
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 298
+when
+	des==298
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 299
+when
+	des==299
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 300
+when
+	des==300
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 301
+when
+	des==301
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 302
+when
+	des==302
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 303
+when
+	des==303
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 304
+when
+	des==304
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 305
+when
+	des==305
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 306
+when
+	des==306
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 307
+when
+	des==307
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 308
+when
+	des==308
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 309
+when
+	des==309
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 310
+when
+	des==310
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 311
+when
+	des==311
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 312
+when
+	des==312
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 313
+when
+	des==313
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 314
+when
+	des==314
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 315
+when
+	des==315
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 316
+when
+	des==316
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 317
+when
+	des==317
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 318
+when
+	des==318
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 319
+when
+	des==319
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 320
+when
+	des==320
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 321
+when
+	des==321
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 322
+when
+	des==322
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 323
+when
+	des==323
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 324
+when
+	des==324
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 325
+when
+	des==325
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 326
+when
+	des==326
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 327
+when
+	des==327
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 328
+when
+	des==328
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 329
+when
+	des==329
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 330
+when
+	des==330
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 331
+when
+	des==331
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 332
+when
+	des==332
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 333
+when
+	des==333
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 334
+when
+	des==334
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 335
+when
+	des==335
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 336
+when
+	des==336
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 337
+when
+	des==337
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 338
+when
+	des==338
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 339
+when
+	des==339
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 340
+when
+	des==340
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 341
+when
+	des==341
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 342
+when
+	des==342
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 343
+when
+	des==343
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 344
+when
+	des==344
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 345
+when
+	des==345
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 346
+when
+	des==346
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 347
+when
+	des==347
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 348
+when
+	des==348
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 349
+when
+	des==349
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 350
+when
+	des==350
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 351
+when
+	des==351
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 352
+when
+	des==352
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 353
+when
+	des==353
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 354
+when
+	des==354
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 355
+when
+	des==355
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 356
+when
+	des==356
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 357
+when
+	des==357
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 358
+when
+	des==358
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 359
+when
+	des==359
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 360
+when
+	des==360
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 361
+when
+	des==361
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 362
+when
+	des==362
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 363
+when
+	des==363
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 364
+when
+	des==364
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 365
+when
+	des==365
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 366
+when
+	des==366
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 367
+when
+	des==367
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 368
+when
+	des==368
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 369
+when
+	des==369
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 370
+when
+	des==370
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 371
+when
+	des==371
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 372
+when
+	des==372
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 373
+when
+	des==373
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 374
+when
+	des==374
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 375
+when
+	des==375
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 376
+when
+	des==376
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 377
+when
+	des==377
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 378
+when
+	des==378
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 379
+when
+	des==379
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 380
+when
+	des==380
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 381
+when
+	des==381
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 382
+when
+	des==382
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 383
+when
+	des==383
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 384
+when
+	des==384
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 385
+when
+	des==385
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 386
+when
+	des==386
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 387
+when
+	des==387
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 388
+when
+	des==388
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 389
+when
+	des==389
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 390
+when
+	des==390
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 391
+when
+	des==391
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 392
+when
+	des==392
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 393
+when
+	des==393
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 394
+when
+	des==394
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 395
+when
+	des==395
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 396
+when
+	des==396
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 397
+when
+	des==397
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 398
+when
+	des==398
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 399
+when
+	des==399
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 400
+when
+	des==400
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 401
+when
+	des==401
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 402
+when
+	des==402
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 403
+when
+	des==403
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 404
+when
+	des==404
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 405
+when
+	des==405
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 406
+when
+	des==406
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 407
+when
+	des==407
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 408
+when
+	des==408
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 409
+when
+	des==409
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 410
+when
+	des==410
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 411
+when
+	des==411
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 412
+when
+	des==412
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 413
+when
+	des==413
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 414
+when
+	des==414
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 415
+when
+	des==415
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 416
+when
+	des==416
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 417
+when
+	des==417
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 418
+when
+	des==418
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 419
+when
+	des==419
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 420
+when
+	des==420
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 421
+when
+	des==421
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 422
+when
+	des==422
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 423
+when
+	des==423
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 424
+when
+	des==424
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 425
+when
+	des==425
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 426
+when
+	des==426
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 427
+when
+	des==427
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 428
+when
+	des==428
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 429
+when
+	des==429
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 430
+when
+	des==430
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 431
+when
+	des==431
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 432
+when
+	des==432
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 433
+when
+	des==433
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 434
+when
+	des==434
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 435
+when
+	des==435
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 436
+when
+	des==436
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 437
+when
+	des==437
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 438
+when
+	des==438
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 439
+when
+	des==439
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 440
+when
+	des==440
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 441
+when
+	des==441
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 442
+when
+	des==442
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 443
+when
+	des==443
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 444
+when
+	des==444
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 445
+when
+	des==445
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 446
+when
+	des==446
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 447
+when
+	des==447
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 448
+when
+	des==448
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 449
+when
+	des==449
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 450
+when
+	des==450
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 451
+when
+	des==451
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 452
+when
+	des==452
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 453
+when
+	des==453
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 454
+when
+	des==454
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 455
+when
+	des==455
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 456
+when
+	des==456
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 457
+when
+	des==457
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 458
+when
+	des==458
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 459
+when
+	des==459
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 460
+when
+	des==460
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 461
+when
+	des==461
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 462
+when
+	des==462
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 463
+when
+	des==463
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 464
+when
+	des==464
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 465
+when
+	des==465
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 466
+when
+	des==466
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 467
+when
+	des==467
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 468
+when
+	des==468
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 469
+when
+	des==469
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 470
+when
+	des==470
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end
+rule 471
+when
+	des==471
+then
+
+Fire Rule
+
+
+     |-(1) HOJAS COMPUESTAS, ALTERNAS
+     |-(2) HOJAS SIMPLES OPUESTAS, CON ESTÍPULAS
+    >|-(3) HOJAS SIMPLES, OPUESTAS, SIN ESTÍPULAS
+     |-(4) HOJAS SIMPLES, ALTERNAS, CON ESTÍPULAS
+end

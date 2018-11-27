@@ -1,0 +1,111 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>Administración Plan Muestreo</title>
+	<meta name="content-type" content="text/html; charset=UTF-8" />
+
+</h:head>
+
+<h:body>
+	<ui:composition template="#{suelosMB.URLMenu}">
+		<ui:define name="body">
+			<f:view>
+				<h:form>
+					<p:panel header="Modulo Plan Muestreo" id="moduloPlanMuestreo">
+
+						<p:growl />
+
+						<h:panelGrid columns="2" border="0">
+
+							<p:outputLabel value="Codigo De La Estrategia" />
+
+							<p:inputText id="txtCodigoPlan"
+								binding="#{suelosMB.txtCodigoPlanMuestreo}"
+								placeholder="Digite el Codigo del Plan" />
+
+							<p:outputLabel value="Nombre Terreno" />
+
+							<p:selectOneMenu id="listaTerrenos"
+								binding="#{suelosMB.menuTerrenos}">
+								<f:selectItem itemValue="-1" itemLabel="--SELECCIONE TERRENO-" />
+								<f:selectItems value="#{suelosMB.itemsTerrenos}" />
+								<p:ajax update="moduloPlanMuestreo" />
+							</p:selectOneMenu>
+
+							<p:commandButton id="btnRegistrarEstrategia"
+								binding="#{suelosMB.btnRegistrarEstrategia}"
+								value="Registrar Estrategia"
+								update="moduloPlanMuestreo,moduloLotes"
+								action="#{suelosMB.registrarPlanMuestreo}" />
+
+						</h:panelGrid>
+
+
+					</p:panel>
+					<p:panel header="Asignar Lotes" id="moduloLotes">
+
+						<p:growl />
+
+						<h:panelGrid columns="2" border="0">
+							<p:outputLabel value="Terrenos Registrados" />
+
+							<p:selectOneMenu id="listaTerreno2"
+								binding="#{suelosMB.menuTerrenosParaLote}">
+								<f:selectItem itemValue="-1" itemLabel="--SELECCIONE TERRENO" />
+								<f:selectItems value="#{suelosMB.itemsTerrenosParaLote}" />
+								<p:ajax update="moduloLotes"
+									listener="#{suelosMB.cargarLotesDelTerreno2}" />
+								<p:ajax update="moduloLotes"
+									listener="#{suelosMB.cargarEstrategiasDelTerreno2}" />
+							</p:selectOneMenu>
+
+							<p:outputLabel value="Estrategias Del Terreno" />
+
+							<p:selectOneMenu id="listaEstrategias"
+								binding="#{suelosMB.menuEstrategiasMuestreo}">
+								<f:selectItem itemValue="-1" itemLabel="--SELECCIONE ESTRATEGIA" />
+								<f:selectItems value="#{suelosMB.itemsEstrategiasMuestreo}" />
+								<p:ajax update="moduloLotes" />
+							</p:selectOneMenu>
+
+							<p:outputLabel value="Lotes Del Terreno" />
+
+							<p:selectOneMenu id="listaLotes" binding="#{suelosMB.menuLotes}">
+								<f:selectItem itemValue="-1" itemLabel="--SELECCIONE LOTE" />
+								<f:selectItems value="#{suelosMB.itemsLotes}" />
+								<p:ajax update="moduloLotes" />
+							</p:selectOneMenu>
+
+							<p:outputLabel value="Número Puntos Recolección" />
+
+							<p:inputText id="txtCantidadPM" value="0" placeholder="#ro"
+								binding="#{suelosMB.txtCantidadMuestrasRecolectadas}" />
+
+							<p:commandButton id="btnActualizarPM"
+								binding="#{suelosMB.btnAsignarPuntosALote}"
+								value="Asignar Cantidad De Puntos"
+								update="moduloPlanMuestreo,moduloLotes"
+								action="#{suelosMB.asignarCantidadPuntosALote}" />
+
+							<p:commandButton id="btnEliminarPlan" value="Eliminar Estrategia"
+								update="moduloPlanMuestreo,moduloLotes"
+								binding="#{suelosMB.btnEliminarEstrategia}"
+								action="#{suelosMB.eliminarPlanMuestreo}" />
+
+
+						</h:panelGrid>
+
+
+					</p:panel>
+
+				</h:form>
+			</f:view>
+		</ui:define>
+	</ui:composition>
+</h:body>
+
+</html>

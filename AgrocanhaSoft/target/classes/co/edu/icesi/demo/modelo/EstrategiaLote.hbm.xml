@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 18/05/2017 01:24:35 PM by Hibernate Tools 5.1.4.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="co.edu.icesi.demo.modelo.EstrategiaLote" optimistic-lock="version" polymorphism="implicit" schema="public" select-before-update="false" table="estrategia_lote">
+        <id name="estrategialoteid" type="big_decimal">
+            <column name="estrategialoteid" precision="20" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="co.edu.icesi.demo.modelo.Caracterizacionlote" embed-xml="true" fetch="select" insert="true" name="caracterizacionlote" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="caracterizacionloteid" precision="20" scale="0" unique="true"/>
+        </many-to-one>
+        <many-to-one class="co.edu.icesi.demo.modelo.Estrategiamuestreo" embed-xml="true" fetch="select" insert="true" name="estrategiamuestreo" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="estmuestreo_planmid" precision="20" scale="0"/>
+        </many-to-one>
+        <many-to-one class="co.edu.icesi.demo.modelo.Lote" embed-xml="true" fetch="select" insert="true" name="lote" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="lote_loteid" precision="20" scale="0"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="numeropuntos" optimistic-lock="true" type="long" unique="false">
+            <column name="numeropuntos" not-null="true" precision="10" scale="0"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="caracterizacionlotes" optimistic-lock="true" sort="unsorted" table="caracterizacionlote">
+            <key on-delete="noaction">
+                <column name="estrategialote_id" not-null="true" precision="20" scale="0"/>
+            </key>
+            <one-to-many class="co.edu.icesi.demo.modelo.Caracterizacionlote" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="puntorecoleccions" optimistic-lock="true" sort="unsorted" table="puntorecoleccion">
+            <key on-delete="noaction">
+                <column name="estrategialoteid" precision="20" scale="0"/>
+            </key>
+            <one-to-many class="co.edu.icesi.demo.modelo.Puntorecoleccion" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

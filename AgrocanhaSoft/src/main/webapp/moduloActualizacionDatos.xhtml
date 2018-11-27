@@ -1,0 +1,72 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+<title>Actualización De Lotes</title>
+	<meta name="content-type" content="text/html; charset=UTF-8" />
+
+</h:head>
+
+<h:body>
+	<ui:composition template="#{usuarioMB.URLMenu}">
+		<ui:define name="body">
+			<f:view>
+
+				<h:form>
+
+					<p:panel header="Modulo Actualización Datos" id="moduloDatos">
+
+						<p:growl />
+
+						<h:panelGrid columns="2" border="0">
+
+							<p:outputLabel value="Cedula" />
+
+							<p:inputText id="txtCedula" disabled="true"
+								binding="#{usuarioMB.txtCedulaUsu}" />
+
+							<p:outputLabel value="Nombre" />
+
+							<p:inputText id="txtNombre" binding="#{usuarioMB.txtNombreUsu}" />
+
+							<p:outputLabel value="Contraseña / Password" />
+
+							<p:password id="txtPassword"
+								binding="#{usuarioMB.txtPasswordUsu}" placeholder="** **" />
+
+							<p:outputLabel value="Nueva Contraseña" />
+
+							<p:password id="txtNueva"
+								binding="#{usuarioMB.txtNuevoPasswordUsu}" placeholder="** **" />
+
+							<p:outputLabel value="Confirmar Nueva Contraseña" />
+
+							<p:password id="txtConfirmar"
+								binding="#{usuarioMB.txtConfirmaPass}" placeholder="** **" />
+
+							<h:outputLabel value="Modificar Password" />
+							<p:selectBooleanCheckbox value="false"
+								binding="#{usuarioMB.boxModificarPassword}" />
+
+							<p:commandButton id="btnActualizar"
+								value="Actualizar Información" update="moduloDatos"
+								action="#{usuarioMB.actualizarDatosUsuario}"
+								binding="#{usuarioMB.btnActualizarDatos}" />
+
+							<p:commandButton id="btnCargarDatos"
+								value="Cargar Datos Personales" update="moduloDatos"
+								action="#{usuarioMB.cargarInfoUsuario}"
+								binding="#{usuarioMB.btnCargarDatosPersonales}" />
+
+						</h:panelGrid>
+					</p:panel>
+				</h:form>
+
+			</f:view>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

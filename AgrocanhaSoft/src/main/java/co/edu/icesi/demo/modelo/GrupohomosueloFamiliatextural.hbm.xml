@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 18/05/2017 01:24:35 PM by Hibernate Tools 5.1.4.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="co.edu.icesi.demo.modelo.GrupohomosueloFamiliatextural" optimistic-lock="version" polymorphism="implicit" schema="public" select-before-update="false" table="grupohomosuelo_familiatextural">
+        <id name="id" type="big_decimal">
+            <column name="id" precision="20" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="co.edu.icesi.demo.modelo.Familiatextural" embed-xml="true" fetch="select" insert="true" name="familiatextural" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="familiatexturalid" precision="20" scale="0"/>
+        </many-to-one>
+        <many-to-one class="co.edu.icesi.demo.modelo.Grupohomogeneosuelo" embed-xml="true" fetch="select" insert="true" name="grupohomogeneosuelo" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="grupohsueloid" precision="20" scale="0"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

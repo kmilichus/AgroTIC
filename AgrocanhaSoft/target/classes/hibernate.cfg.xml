@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="hibernate.search.autoregister_listeners">true</property>
+		<property name="hibernate.validator.apply_to_ddl">false</property>
+		<property name="hibernate.show_sql">true</property>
+
+		<mapping resource="co/edu/icesi/demo/modelo/EstrategiaLote.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Usuario.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Nivelhumedad.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Rangoelementos.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Grupohumedad.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Tipocaracteristica.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Subordensuelo.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Caracterizacionlote.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Medicionmetricas.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Subgruposuelo.hbm.xml" />
+		<mapping
+			resource="co/edu/icesi/demo/modelo/GrupohomosueloFamiliatextural.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Zonaagroecologica.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Informelaboratorio.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Diagnosticoagronomo.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/NivelhumTipopermeaGrupohum.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Caracteristica.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Tipopermeabilidad.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Metodologia.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Ordensuelo.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Elemento.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Estrategiamuestreo.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Grupohomogeneosuelo.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Metrica.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Rangometricas.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Terreno.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Zonavariedad.hbm.xml" />
+		<mapping
+			resource="co/edu/icesi/demo/modelo/GrupohomosueloCaracteristica.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Regimenhumedad.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Clasificaciontextura.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Fotografia.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Lote.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Clasificacionelemento.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Faseaplicada.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/GrupohomosueloOrdensuelo.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Puntorecoleccion.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/ZonaagroecologicaIngenio.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Familiatextural.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Grupotextural.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Medicionelemento.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/ZonaagroZonavariedad.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Ingenio.hbm.xml" />
+		<mapping resource="co/edu/icesi/demo/modelo/Rol.hbm.xml" />
+
+
+	</session-factory>
+</hibernate-configuration>

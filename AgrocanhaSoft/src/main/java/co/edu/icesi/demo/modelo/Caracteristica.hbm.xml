@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 18/05/2017 01:24:35 PM by Hibernate Tools 5.1.4.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="co.edu.icesi.demo.modelo.Caracteristica" optimistic-lock="version" polymorphism="implicit" schema="public" select-before-update="false" table="caracteristica">
+        <id name="caractid" type="big_decimal">
+            <column name="caractid" precision="20" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="co.edu.icesi.demo.modelo.Tipocaracteristica" embed-xml="true" fetch="select" insert="true" name="tipocaracteristica" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="tipocaractid" precision="20" scale="0"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="descripcioncaract" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="descripcioncaract" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="grupohomosueloCaracteristicas" optimistic-lock="true" sort="unsorted" table="grupohomosuelo_caracteristica">
+            <key on-delete="noaction">
+                <column name="caracteristica_caractid" precision="20" scale="0"/>
+            </key>
+            <one-to-many class="co.edu.icesi.demo.modelo.GrupohomosueloCaracteristica" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

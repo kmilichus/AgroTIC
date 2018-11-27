@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 18/05/2017 01:24:35 PM by Hibernate Tools 5.1.4.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="co.edu.icesi.demo.modelo.Puntorecoleccion" optimistic-lock="version" polymorphism="implicit" schema="public" select-before-update="false" table="puntorecoleccion">
+        <id name="puntoid" type="big_decimal">
+            <column name="puntoid" precision="20" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="co.edu.icesi.demo.modelo.EstrategiaLote" embed-xml="true" fetch="select" insert="true" name="estrategiaLote" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="estrategialoteid" precision="20" scale="0"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="latitud" optimistic-lock="true" type="java.lang.Double" unique="false">
+            <column name="latitud" precision="17" scale="17"/>
+        </property>
+        <property generated="never" lazy="false" name="altitud" optimistic-lock="true" type="java.lang.Double" unique="false">
+            <column name="altitud" precision="17" scale="17"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="fotografias" optimistic-lock="true" sort="unsorted" table="fotografia">
+            <key on-delete="noaction">
+                <column name="puntorid" not-null="true" precision="20" scale="0"/>
+            </key>
+            <one-to-many class="co.edu.icesi.demo.modelo.Fotografia" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

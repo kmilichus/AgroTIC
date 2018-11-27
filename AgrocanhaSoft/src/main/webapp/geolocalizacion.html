@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>Captura de Coordenadas</title>
+	<meta name="content-type" content="text/html; charset=UTF-8" />
+</h:head>
+
+<h:body>
+
+	<button onclick="capturarUbicacionGeografica()">Capturar
+		Coordenadas</button>
+
+	<br></br>
+
+	<p:outputLabel id="latitud"></p:outputLabel>
+	<p:outputLabel id="longitud"></p:outputLabel>
+
+	<script>
+		var latitud = document.getElementById("latitud");
+		var longitud = document.getElementById("longitud");
+
+		function capturarUbicacionGeografica() {
+
+			if (navigator.geolocation) {
+
+				navigator.geolocation.getCurrentPosition(showPosition);
+
+			} else {
+
+				latitud.innerHTML = "El navegador no soporta la geolocalización!";
+
+			}
+		}
+
+		function showPosition(position) {
+
+			latitud.innerHTML = "Latitud: " + position.coords.latitude
+					+ "<br></br>";
+
+			longitud.innerHTML = "Longitud: " + position.coords.longitude;
+
+		}
+	</script>
+
+</h:body>
+</html>

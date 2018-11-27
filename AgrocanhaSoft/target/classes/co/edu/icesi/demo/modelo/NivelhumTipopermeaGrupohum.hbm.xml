@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 18/05/2017 01:24:35 PM by Hibernate Tools 5.1.4.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="co.edu.icesi.demo.modelo.NivelhumTipopermeaGrupohum" optimistic-lock="version" polymorphism="implicit" schema="public" select-before-update="false" table="nivelhum_tipopermea_grupohum">
+        <id name="id" type="big_decimal">
+            <column name="id" precision="20" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="co.edu.icesi.demo.modelo.Grupohumedad" embed-xml="true" fetch="select" insert="true" name="grupohumedad" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="grupohumedadid" precision="20" scale="0"/>
+        </many-to-one>
+        <many-to-one class="co.edu.icesi.demo.modelo.Nivelhumedad" embed-xml="true" fetch="select" insert="true" name="nivelhumedad" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="nivelhumedadid" precision="20" scale="0"/>
+        </many-to-one>
+        <many-to-one class="co.edu.icesi.demo.modelo.Tipopermeabilidad" embed-xml="true" fetch="select" insert="true" name="tipopermeabilidad" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="tipopermeabilidadid" precision="20" scale="0"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+#---------------------------------------------------------
+# Enmiendas AP
+#---------------------------------------------------------
+
+total.enmiendas.fisica = 12
+
+enmienda.fisica.1=Arar
+enmienda.fisica.2=Movimientos en el suelo
+enmienda.fisica.3=Nivelado de terreno
+enmienda.fisica.4=Licuado en el suelo
+enmienda.fisica.5=Agregar MO
+enmienda.fisica.6=Revision de riego y drenaje
+enmienda.fisica.7=Encalar
+enmienda.fisica.8=Reevision material parental
+enmienda.fisica.9=Drenar el suelo
+enmienda.fisica.10=Revisar la estructura del suelo 
+enmienda.fisica.11=Remover capa freatica Drenaje
+enmienda.fisica.12=Recomendar hacer calicata para ver los horizontes, drenar si es necesario.
+
+total.enmiendas.qumica= 9
+
+enmienda.quimica.1=Encalar con Cal Magnesica
+enmienda.quimica.2=Raspado
+enmienda.quimica.3=Es necesario remover el exceso de Na+ y remplazarlo por Ca++. Para ello se utiliza yeso y CaCl que tienen calcio soluble. También se utilizan ácido sulfúrico, sulfato de hierro, sulfato de aluminio, sulfato de calcio o pirita.
+enmienda.quimica.4=Adicion de MO
+enmienda.quimica.5=Lavado del suelo
+enmienda.quimica.6=Encalar con Cal dolomíta
+enmienda.quimica.7=Aplicación de enmienda de yeso
+enmienda.quimica.8=El magnesio puede encontrarse en la caliza dolomítica empleada en la mayor parte de los sustratos para cultivo sin suelo, aunque por lo general no en la cantidad suficiente para satisfacer las necesidades de las plantas. En cuanto al agua, puede ser fuente de una considerable cantidad de magnesio; por lo tanto, antes de elegir un fertilizante, hágala analizar, pero si no le aporta por lo menos 25 ppm de este elemento, será necesario proporcionarlo mediante el producto apropiado.
+enmienda.quimica.9=Aplicación sulfato ferroso
+
+total.warnings = 4
+warning.1=Problema grave para cultivar, Arena por encima del 50 %.
+warning.2=Evitar el desequilibrio entre la relación calcio magnesio
+warning.3=Alerta Hidromorfismo e Impedancias
+warning.4=Suelo no apto para cultivo
